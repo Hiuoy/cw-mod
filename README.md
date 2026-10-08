@@ -1,11 +1,5 @@
 # cw-mod — Call of Duty: Black Ops Cold War (T9) Community Revival
 
-> **Vision:** keep T9 Zombies alive. A community-owned, open-source mod that lets people
-> load custom Zombies content, play together , and
-> preserve this version of Zombies for the long run.
-
-**Community-owned.** Nobody owns this but the people who play it. Contributions welcome.
-
 ---
 
 > **AI disclaimer:** yes this is Ai slop.
@@ -24,12 +18,43 @@ We do **not** distribute game files. We do not support piracy. You must own the 
 
 ## Status
 
-Target build **1.34.0.15931218**. Working today:
-- the Arxan bypass, an in-game overlay, and a GSC/CSC script loader;
-- Zombies progression (XP, weapon XP, saves) offline and in LAN mode;
-- two PCs in one match, in LAN mode or in online mode against a local Demonware backend that each
-  player runs on their own PC;
-- custom Zombies maps, built in Godot with mapkit and started from a CUSTOM MAPS tab.
+Target build **1.34.0.15931218**. "Working" below means seen working in the game, not just built.
+
+### Working today
+
+**Client**
+- Arxan bypass and a stable boot, with a crash logger and `cw-mod/client.log`.
+- In-game overlay with Home, Maps, Server Browser, Session, Scripts, Demonware, LUI Menus and Debug tabs.
+- GSC/CSC script loader: add or replace the game's scripts from `cw-mod/scripts`.
+- Trainer script (Pack-a-Punch, crystals).
+- All settings in one file, `cw-mod/cw-mod.json`, including UI text replacement.
+- Fix for the engine's crash on any Lua error.
+
+**Playing together**
+- LAN mode: host a match and join it from a second PC.
+- Online mode: the game's online menus and party, against a local Demonware backend that each player
+  runs on their own PC. Two PCs have played a custom map together on one home network.
+- Server Browser tab: finds hosts on the network.
+
+**Local Demonware backend** (`tools/dwserver`)
+- Login, online party and mode tiles, playlists from local files, local player storage, and starting
+  and playing a Zombies match.
+
+**Zombies progression**
+- XP, rank, weapon XP, weapon levels, attachment unlocks and saves, kept on your PC, offline and in LAN mode.
+- Online mode: level and weapon levels stay across restarts.
+
+**Custom maps (mapkit)**, built in Godot and started from the CUSTOM MAPS tab:
+- Map gameplay: level scripts, zones, spawns, doors, Mystery Box, Pack-a-Punch, perks, ammo cache, Armor
+  Station, Wunderfizz, crafting table, power switch and exfil.
+- Your own meshes (`.glb`), game models as props, your own textures, sky, sun and fog.
+- Your own navmesh, so zombies chase the player through your layout.
+- A map of its own name and zone, played by a host and a second PC with no kick.
+- A map that loads only `techset_zm_silver` of Die Maschine's zones, with none of its lamps or baked shadows.
+- Server Browser as a game menu: a SERVER BROWSER button on the Zombies main screen.
+- Online mode: the match-end save of the progression files.
+- Unlock-all switch (`"unlock_all": true` in `cw-mod.json`).
+
 
 What's done, what's next and what's parked: **[docs/ROADMAP.md](docs/ROADMAP.md)**. How the client is
 put together: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
