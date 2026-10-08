@@ -1,0 +1,174 @@
+[gd_scene format=3 uid="uid://fhcah7lgxabv"]
+
+[ext_resource type="Script" uid="uid://b56uha4q88ix1" path="res://addons/mapkit/nodes/mk_map.gd" id="1_l8xj6"]
+[ext_resource type="Material" path="res://addons/mapkit/brush_grid.tres" id="2_scok0"]
+[ext_resource type="Script" uid="uid://bud572ktjo72o" path="res://addons/mapkit/nodes/mk_brush.gd" id="3_ncddm"]
+[ext_resource type="Script" uid="uid://cq3lx15gjfkmd" path="res://addons/mapkit/nodes/mk_zone.gd" id="4_ku5qj"]
+[ext_resource type="Script" uid="uid://cst5do652sjhu" path="res://addons/mapkit/nodes/mk_door.gd" id="5_4g8uk"]
+[ext_resource type="Script" uid="uid://3hdxsgvt5fyx" path="res://addons/mapkit/nodes/mk_player_spawn.gd" id="6_en7tp"]
+[ext_resource type="Script" uid="uid://5g4ptyuj1o7t" path="res://addons/mapkit/nodes/mk_zombie_spawner.gd" id="7_i5v8s"]
+[ext_resource type="Script" uid="uid://cifjlj56qsxb1" path="res://addons/mapkit/nodes/mk_barrier.gd" id="8_7oe0x"]
+[ext_resource type="Script" uid="uid://cw85gtdaii0pc" path="res://addons/mapkit/nodes/mk_perk_machine.gd" id="9_i6y64"]
+[ext_resource type="Script" uid="uid://c7offaxr1ey7d" path="res://addons/mapkit/nodes/mk_mystery_box.gd" id="10_ew6nb"]
+[ext_resource type="Script" uid="uid://xujlfvjellcp" path="res://addons/mapkit/nodes/mk_pack_a_punch.gd" id="11_pistv"]
+[ext_resource type="Script" uid="uid://da41k1s6gqjli" path="res://addons/mapkit/nodes/mk_power_switch.gd" id="12_ba7kg"]
+[ext_resource type="Script" uid="uid://dqgfe64qss3ui" path="res://addons/mapkit/nodes/mk_light.gd" id="13_hwugb"]
+
+[node name="zm_template" type="Node3D" unique_id=1387483744]
+script = ExtResource("1_l8xj6")
+map_name = "zm_template"
+title = "Template"
+author = "mapkit"
+
+[node name="Geometry" type="Node3D" parent="." unique_id=1150902082]
+
+[node name="Floor" type="CSGBox3D" parent="Geometry" unique_id=1592355431]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, -6.5)
+size = Vector3(12, 0.5, 26)
+material = ExtResource("2_scok0")
+script = ExtResource("3_ncddm")
+
+[node name="WallSouth" type="CSGBox3D" parent="Geometry" unique_id=654645728]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 6.75)
+size = Vector3(13, 4, 0.5)
+material = ExtResource("2_scok0")
+script = ExtResource("3_ncddm")
+
+[node name="WallNorth" type="CSGBox3D" parent="Geometry" unique_id=2108825912]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -19.75)
+size = Vector3(13, 4, 0.5)
+material = ExtResource("2_scok0")
+script = ExtResource("3_ncddm")
+
+[node name="WallWest" type="CSGBox3D" parent="Geometry" unique_id=1395399788]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.25, 2, -6.5)
+size = Vector3(0.5, 4, 27)
+material = ExtResource("2_scok0")
+script = ExtResource("3_ncddm")
+
+[node name="WallEast" type="CSGBox3D" parent="Geometry" unique_id=1458736744]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.25, 2, -6.5)
+size = Vector3(0.5, 4, 27)
+material = ExtResource("2_scok0")
+script = ExtResource("3_ncddm")
+
+[node name="DividerWest" type="CSGBox3D" parent="Geometry" unique_id=605913355]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.625, 2, -6.5)
+size = Vector3(4.75, 4, 1)
+material = ExtResource("2_scok0")
+script = ExtResource("3_ncddm")
+
+[node name="DividerEast" type="CSGBox3D" parent="Geometry" unique_id=115555034]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.625, 2, -6.5)
+size = Vector3(4.75, 4, 1)
+material = ExtResource("2_scok0")
+script = ExtResource("3_ncddm")
+
+[node name="Gameplay" type="Node3D" parent="." unique_id=1549990582]
+
+[node name="StartZone" type="Node3D" parent="Gameplay" unique_id=1425028418]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0077371597, -9.536743e-07, 6.404894)
+script = ExtResource("4_ku5qj")
+active_at_start = true
+size = Vector3(12, 4, 12.5)
+
+[node name="Room2Zone" type="Node3D" parent="Gameplay" unique_id=1706574831]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -13.25)
+script = ExtResource("4_ku5qj")
+zone_name = "room_2"
+size = Vector3(12, 4, 12.5)
+
+[node name="Door" type="Node3D" parent="Gameplay" unique_id=1286545257]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.5)
+script = ExtResource("5_4g8uk")
+opens = "room_2"
+size = Vector3(2.5, 3, 1)
+
+[node name="PlayerSpawn1" type="Node3D" parent="Gameplay" unique_id=848369774]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 2)
+script = ExtResource("6_en7tp")
+player = 1
+
+[node name="PlayerSpawn2" type="Node3D" parent="Gameplay" unique_id=505238226]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 2)
+script = ExtResource("6_en7tp")
+player = 2
+
+[node name="PlayerSpawn3" type="Node3D" parent="Gameplay" unique_id=2137512183]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 4)
+script = ExtResource("6_en7tp")
+player = 3
+
+[node name="PlayerSpawn4" type="Node3D" parent="Gameplay" unique_id=1028928132]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 4)
+script = ExtResource("6_en7tp")
+player = 4
+
+[node name="SpawnerStartWest" type="Node3D" parent="Gameplay" unique_id=474012782]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 5.5)
+script = ExtResource("7_i5v8s")
+
+[node name="SpawnerStartEast" type="Node3D" parent="Gameplay" unique_id=325060433]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 5.5)
+script = ExtResource("7_i5v8s")
+
+[node name="SpawnerRoom2West" type="Node3D" parent="Gameplay" unique_id=662197036]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -5, 0, -18.5)
+script = ExtResource("7_i5v8s")
+zone = "room_2"
+
+[node name="SpawnerRoom2East" type="Node3D" parent="Gameplay" unique_id=1126327195]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 5, 0, -18.5)
+script = ExtResource("7_i5v8s")
+zone = "room_2"
+
+[node name="BarrierEast" type="Node3D" parent="Gameplay" unique_id=1665171752]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.9, 0, -2)
+script = ExtResource("8_7oe0x")
+
+[node name="Juggernog" type="Node3D" parent="Gameplay" unique_id=1017960688]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.4, 0, -3.9776292)
+script = ExtResource("9_i6y64")
+perk = "speed_cola"
+
+[node name="speed_cola" type="Node3D" parent="Gameplay" unique_id=2086080255]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.4, 0, 3.5)
+script = ExtResource("9_i6y64")
+perk = "juggernog"
+
+[node name="BoxStart" type="Node3D" parent="Gameplay" unique_id=693466347]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -5.5, 0, -12)
+script = ExtResource("10_ew6nb")
+start_here = true
+
+[node name="BoxRoom2East" type="Node3D" parent="Gameplay" unique_id=926329139]
+transform = Transform3D(0.020236075, 0.18472128, 0.9825827, 0.046027098, 0.9815699, -0.18547882, -0.9987353, 0.048978735, 0.011360884, 0.50328016, 1.8327026, -4.6181993)
+script = ExtResource("10_ew6nb")
+
+[node name="BoxRoom2East2" type="Node3D" parent="Gameplay" unique_id=668059070]
+transform = Transform3D(0.595716, -0.52887887, 0.60449123, 0.50901294, 0.8307693, 0.22522934, -0.6213118, 0.17352113, 0.7641088, 0.50328016, 0, -0.9878731)
+script = ExtResource("10_ew6nb")
+
+[node name="PackAPunch" type="Node3D" parent="Gameplay" unique_id=1906028308]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 2.9065418)
+script = ExtResource("11_pistv")
+
+[node name="PowerSwitch" type="Node3D" parent="Gameplay" unique_id=2141101525]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.95, 0, -10)
+script = ExtResource("12_ba7kg")
+
+[node name="Lights" type="Node3D" parent="." unique_id=67245135]
+
+[node name="LightStart" type="OmniLight3D" parent="Lights" unique_id=1769771936]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, 0)
+light_energy = 1.5
+shadow_enabled = true
+omni_range = 12.0
+script = ExtResource("13_hwugb")
+
+[node name="LightRoom2" type="OmniLight3D" parent="Lights" unique_id=1469726150]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, -13)
+light_energy = 1.5
+shadow_enabled = true
+omni_range = 12.0
+script = ExtResource("13_hwugb")

@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://fjrqc5bj15qc"]
+
+[ext_resource type="Shader" uid="uid://drqnwtsy41xmh" path="res://addons/mapkit/brush_grid.gdshader" id="1_grid"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_grid")
+shader_parameter/base_color = Color(0.62, 0.62, 0.6, 1)
+shader_parameter/minor_units = 16.0
+shader_parameter/major_units = 128.0

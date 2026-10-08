@@ -1,0 +1,5 @@
+# Generated crypto material — contains PRIVATE keys. Never commit.
+material/
+
+# Server console capture from a test run — transient, and it quotes live request bodies.
+server_console.log

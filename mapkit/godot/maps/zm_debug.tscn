@@ -1,0 +1,2673 @@
+[gd_scene format=3 uid="uid://bjua1pa4n8c3x"]
+
+[ext_resource type="Script" uid="uid://b56uha4q88ix1" path="res://addons/mapkit/nodes/mk_map.gd" id="1_pkvit"]
+[ext_resource type="Material" uid="uid://fjrqc5bj15qc" path="res://addons/mapkit/brush_grid.tres" id="2_pehrx"]
+[ext_resource type="Script" uid="uid://bud572ktjo72o" path="res://addons/mapkit/nodes/mk_brush.gd" id="3_gfn7l"]
+[ext_resource type="Script" uid="uid://cq3lx15gjfkmd" path="res://addons/mapkit/nodes/mk_zone.gd" id="4_4m2w3"]
+[ext_resource type="Script" uid="uid://3hdxsgvt5fyx" path="res://addons/mapkit/nodes/mk_player_spawn.gd" id="5_irnie"]
+[ext_resource type="Script" uid="uid://cw85gtdaii0pc" path="res://addons/mapkit/nodes/mk_perk_machine.gd" id="6_uwgm8"]
+[ext_resource type="Script" uid="uid://boqp4pjdyyilv" path="res://addons/mapkit/nodes/mk_wall_buy.gd" id="7_wf4lr"]
+[ext_resource type="Script" uid="uid://c7offaxr1ey7d" path="res://addons/mapkit/nodes/mk_mystery_box.gd" id="8_hl1kx"]
+[ext_resource type="Script" uid="uid://da41k1s6gqjli" path="res://addons/mapkit/nodes/mk_power_switch.gd" id="9_tfqaq"]
+[ext_resource type="Script" uid="uid://bfthct6sqsfw" path="res://addons/mapkit/nodes/mk_ammo_cache.gd" id="10_3uikg"]
+[ext_resource type="Script" uid="uid://5g4ptyuj1o7t" path="res://addons/mapkit/nodes/mk_zombie_spawner.gd" id="11_7eshx"]
+[ext_resource type="Script" uid="uid://cst5do652sjhu" path="res://addons/mapkit/nodes/mk_door.gd" id="12_f32rv"]
+[ext_resource type="Script" uid="uid://bfoejymfnc2d6" path="res://addons/mapkit/nodes/mk_arsenal.gd" id="13_jid6o"]
+[ext_resource type="Script" uid="uid://dyutp31sjl4nw" path="res://addons/mapkit/nodes/mk_armor_station.gd" id="14_yffjt"]
+[ext_resource type="Script" uid="uid://1adcgqreouer" path="res://addons/mapkit/nodes/mk_wunderfizz.gd" id="15_nyfyu"]
+[ext_resource type="Script" uid="uid://c62qv786x5u4u" path="res://addons/mapkit/nodes/mk_crafting_table.gd" id="16_asq35"]
+[ext_resource type="Script" uid="uid://xujlfvjellcp" path="res://addons/mapkit/nodes/mk_pack_a_punch.gd" id="17_xosou"]
+[ext_resource type="Script" uid="uid://cifjlj56qsxb1" path="res://addons/mapkit/nodes/mk_barrier.gd" id="18_nso1v"]
+[ext_resource type="Script" uid="uid://vodr3ov3x2f3" path="res://addons/mapkit/nodes/mk_exfil.gd" id="19_hmbwi"]
+[ext_resource type="Script" uid="uid://dtuar34r0mqse" path="res://addons/mapkit/nodes/mk_exfil_radio.gd" id="20_cnl4b"]
+[ext_resource type="Script" uid="uid://beijjcnhjecks" path="res://addons/mapkit/nodes/mk_prop.gd" id="21_86rff"]
+[ext_resource type="Script" uid="uid://dcshy42w36mqg" path="res://addons/mapkit/nodes/mk_ambient_room.gd" id="22_5kpg5"]
+[ext_resource type="Script" uid="uid://cop4mf4u2x4s" path="res://addons/mapkit/nodes/mk_mesh.gd" id="23_8etbb"]
+[ext_resource type="Texture2D" uid="uid://tgws46qx48kb" path="res://maps/zm_debug/checker.png" id="24_kvngj"]
+[ext_resource type="Texture2D" uid="uid://bvg2k2t3sulja" path="res://maps/zm_debug/bricks_normal.png" id="25_573in"]
+[ext_resource type="Texture2D" uid="uid://d1jby1mdtyqvp" path="res://maps/zm_debug/stripes_roughness.png" id="26_mskf6"]
+[ext_resource type="Texture2D" uid="uid://cd1pc2xgbgrym" path="res://maps/zm_debug/half_metal.png" id="27_jf1he"]
+[ext_resource type="Texture2D" uid="uid://b04ki70vjrq8d" path="res://maps/zm_debug/grate_cutout.png" id="28_2tn2b"]
+[ext_resource type="Texture2D" uid="uid://dtmnxasfgh3vj" path="res://maps/zm_debug/glow_emission.png" id="29_jsucf"]
+[ext_resource type="Script" uid="uid://dqgfe64qss3ui" path="res://addons/mapkit/nodes/mk_light.gd" id="30_5brfv"]
+[ext_resource type="Texture2D" uid="uid://dagpguqpy3fnu" path="res://maps/zm_debug/sky_panorama.png" id="31_0ex70"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_1qqvt"]
+radius = 0.4
+height = 0.8
+radial_segments = 32
+rings = 16
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_axh2v"]
+resource_name = "debug_rough_0"
+albedo_color = Color(0.85, 0.85, 0.85, 1)
+roughness = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p06cy"]
+resource_name = "debug_rough_25"
+albedo_color = Color(0.85, 0.85, 0.85, 1)
+roughness = 0.25
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_064na"]
+resource_name = "debug_rough_50"
+albedo_color = Color(0.85, 0.85, 0.85, 1)
+roughness = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e0u8e"]
+resource_name = "debug_rough_75"
+albedo_color = Color(0.85, 0.85, 0.85, 1)
+roughness = 0.75
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hus0o"]
+resource_name = "debug_rough_100"
+albedo_color = Color(0.85, 0.85, 0.85, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_glbxm"]
+resource_name = "debug_glossy_red"
+albedo_color = Color(0.8, 0.05, 0.05, 1)
+roughness = 0.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ubo5l"]
+resource_name = "debug_gold_0"
+albedo_color = Color(1, 0.78, 0.34, 1)
+metallic = 1.0
+roughness = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_67qxi"]
+resource_name = "debug_gold_25"
+albedo_color = Color(1, 0.78, 0.34, 1)
+metallic = 1.0
+roughness = 0.25
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t5pwk"]
+resource_name = "debug_gold_50"
+albedo_color = Color(1, 0.78, 0.34, 1)
+metallic = 1.0
+roughness = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jrxbb"]
+resource_name = "debug_gold_75"
+albedo_color = Color(1, 0.78, 0.34, 1)
+metallic = 1.0
+roughness = 0.75
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l1wgu"]
+resource_name = "debug_gold_100"
+albedo_color = Color(1, 0.78, 0.34, 1)
+metallic = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c8587"]
+resource_name = "debug_chrome"
+albedo_color = Color(0.95, 0.95, 0.95, 1)
+metallic = 1.0
+roughness = 0.05
+
+[sub_resource type="BoxMesh" id="BoxMesh_jmttj"]
+size = Vector3(0.7, 0.7, 0.7)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6db3e"]
+resource_name = "debug_matte_red_box"
+albedo_color = Color(0.8, 0.1, 0.1, 1)
+roughness = 0.9
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_otjpv"]
+top_radius = 0.35
+bottom_radius = 0.35
+height = 0.8
+radial_segments = 24
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dk3no"]
+resource_name = "debug_matte_green_cylinder"
+albedo_color = Color(0.1, 0.7, 0.15, 1)
+roughness = 0.9
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_sbxbn"]
+radius = 0.3
+height = 0.9
+radial_segments = 24
+rings = 6
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xfuou"]
+resource_name = "debug_matte_blue_capsule"
+albedo_color = Color(0.1, 0.25, 0.85, 1)
+roughness = 0.9
+
+[sub_resource type="PrismMesh" id="PrismMesh_jvidv"]
+size = Vector3(0.8, 0.7, 0.6)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gdyit"]
+resource_name = "debug_matte_yellow_prism"
+albedo_color = Color(0.95, 0.8, 0.1, 1)
+roughness = 0.9
+
+[sub_resource type="TorusMesh" id="TorusMesh_01dqg"]
+inner_radius = 0.18
+outer_radius = 0.38
+rings = 24
+ring_segments = 10
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kwyy2"]
+resource_name = "debug_matte_white_torus"
+albedo_color = Color(0.95, 0.95, 0.95, 1)
+roughness = 0.9
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bocn5"]
+resource_name = "debug_matte_black_sphere"
+albedo_color = Color(0.03, 0.03, 0.03, 1)
+roughness = 0.9
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oxfkx"]
+resource_name = "debug_all_maps"
+albedo_texture = ExtResource("24_kvngj")
+roughness_texture = ExtResource("26_mskf6")
+normal_enabled = true
+normal_texture = ExtResource("25_573in")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m8pbu"]
+resource_name = "debug_glow"
+albedo_color = Color(0.08, 0.04, 0, 1)
+roughness = 0.6
+emission_enabled = true
+emission = Color(1, 0.5, 0.1, 1)
+emission_energy_multiplier = 2.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f7qyh"]
+resource_name = "mc/mtl_p7_concrete_pillar_damage"
+albedo_color = Color(0.6, 0.6, 0.6, 1)
+
+[sub_resource type="Shader" id="Shader_neymo"]
+code = "shader_type spatial;
+uniform vec4 tint : source_color = vec4(0.2, 0.8, 0.6, 1.0);
+
+void fragment() {
+	ALBEDO = tint.rgb;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_80uox"]
+resource_name = "debug_shader"
+render_priority = 0
+shader = SubResource("Shader_neymo")
+shader_parameter/tint = Color(0.2, 0.8, 0.6, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_pfi1n"]
+text = "ABC"
+font_size = 48
+curve_step = 2.0
+depth = 0.15
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yq8b4"]
+resource_name = "debug_text_object"
+albedo_color = Color(0.2, 0.6, 1, 1)
+roughness = 0.4
+
+[sub_resource type="QuadMesh" id="QuadMesh_7rn23"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p1i7b"]
+resource_name = "debug_checker"
+albedo_texture = ExtResource("24_kvngj")
+roughness = 0.8
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o4lh2"]
+resource_name = "debug_checker_tinted"
+albedo_color = Color(1, 0.55, 0.15, 1)
+albedo_texture = ExtResource("24_kvngj")
+roughness = 0.8
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rbxc7"]
+resource_name = "debug_normal_map"
+albedo_color = Color(0.75, 0.72, 0.68, 1)
+roughness = 0.7
+normal_enabled = true
+normal_texture = ExtResource("25_573in")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_keebv"]
+resource_name = "debug_roughness_map"
+albedo_color = Color(0.55, 0.6, 0.65, 1)
+roughness_texture = ExtResource("26_mskf6")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_se6ea"]
+resource_name = "debug_metal_map"
+albedo_color = Color(0.9, 0.72, 0.45, 1)
+metallic = 1.0
+metallic_texture = ExtResource("27_jf1he")
+roughness = 0.3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wr27o"]
+resource_name = "debug_cutout_scissor"
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("28_2tn2b")
+roughness = 0.8
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7fdfb"]
+resource_name = "debug_cutout_hash"
+transparency = 3
+alpha_hash_scale = 1.0
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_color = Color(0.7, 0.85, 1, 1)
+albedo_texture = ExtResource("28_2tn2b")
+roughness = 0.6
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ivf82"]
+resource_name = "debug_glass"
+transparency = 1
+albedo_color = Color(0.75, 0.88, 1, 0.3)
+roughness = 0.05
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_boqif"]
+resource_name = "debug_glass_red"
+transparency = 1
+albedo_color = Color(1, 0.25, 0.25, 0.5)
+roughness = 0.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_10wij"]
+resource_name = "debug_glow_texture"
+albedo_color = Color(0.05, 0.05, 0.05, 1)
+roughness = 0.6
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 3.0
+emission_operator = 1
+emission_texture = ExtResource("29_jsucf")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3ihns"]
+
+[sub_resource type="TorusMesh" id="TorusMesh_co2x3"]
+inner_radius = 1.4
+outer_radius = 1.8
+rings = 32
+ring_segments = 10
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7qe0r"]
+resource_name = "debug_ring_orange"
+albedo_color = Color(0.95, 0.45, 0.1, 1)
+roughness = 0.7
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7546r"]
+resource_name = "debug_label_white"
+albedo_color = Color(0.95, 0.95, 0.95, 1)
+roughness = 0.9
+
+[sub_resource type="TextMesh" id="TextMesh_xq6uf"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "CONCRETE BLOCK RUSTY"
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_vmkxc"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "CONCRETE PILLAR"
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_iy3rk"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "TRASH PROPS"
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_npdes"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "METAL SCRAP"
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_ludsk"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "DEFAULT (EMPTY)"
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_anyq2"]
+resource_name = "debug_label_yellow"
+albedo_color = Color(1, 0.82, 0.15, 1)
+roughness = 0.6
+
+[sub_resource type="TextMesh" id="TextMesh_r4iir"]
+material = SubResource("StandardMaterial3D_anyq2")
+text = "BRUSHES: GAME MATERIALS BY NAME"
+font_size = 28
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_jt2lu"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "RAMP"
+font_size = 24
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_6eeyp"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "STAIRS"
+font_size = 24
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_o6uws"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "INVISIBLE WALL (CLIP)"
+font_size = 20
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_vasty"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "WALK-THROUGH (NOT SOLID)"
+font_size = 20
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_i672a"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "PLAIN CSGBOX3D"
+font_size = 20
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_ff2mt"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "TURNED + STRETCHED"
+font_size = 20
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_sl5sr"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "JUGGERNOG"
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_ifhdv"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "SPEED COLA"
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_4hnfb"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "QUICK REVIVE"
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_3nyrk"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "STAMIN-UP"
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_2t64r"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "DEADSHOT"
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_5yc6n"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "ELEMENTAL POP"
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_67yl1"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "TOMBSTONE
+(BUILD SKIPS)"
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_0ajr5"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "MULE KICK
+(BUILD SKIPS)"
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_7wur5"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "PHD FLOPPER
+(BUILD SKIPS)"
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_05iat"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "DEATH PERCEPTION
+(BUILD SKIPS)"
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_uesse"]
+material = SubResource("StandardMaterial3D_anyq2")
+text = "PERKS (THE BUILD PLACES DIE MASCHINE'S SIX)"
+font_size = 22
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_71mxh"]
+material = SubResource("StandardMaterial3D_anyq2")
+text = "WALL BUYS"
+font_size = 28
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_mbl6g"]
+material = SubResource("StandardMaterial3D_anyq2")
+text = "WALL BUYS"
+font_size = 28
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_phxww"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "MYSTERY BOX (STARTS HERE)"
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_ihrcf"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "POWER SWITCH: PERKS, ARMOR STATION AND THE GALLERY DEBRIS WAIT FOR IT"
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_ocjks"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "AMMO CRATE"
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_u4w5o"]
+material = SubResource("StandardMaterial3D_anyq2")
+text = "MACHINES (DOOR, 500)"
+font_size = 22
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_qhhta"]
+material = SubResource("StandardMaterial3D_anyq2")
+text = "MATERIALS (DEBRIS, OPENS WITH THE POWER)"
+font_size = 18
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_x57th"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "ARSENAL (NO POWER NEEDED)"
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_tf0dq"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "ARMOR STATION (NEEDS POWER)"
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_sii6k"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "DER WUNDERFIZZ"
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_lujgv"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "CRAFTING TABLE (ALL ITEMS)"
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_r7gc8"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "PACK-A-PUNCH"
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_cabey"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "MYSTERY BOX"
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_bj2tc"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "WOOD BARRIER"
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_bio2v"]
+material = SubResource("StandardMaterial3D_anyq2")
+text = "YARD AND EXFIL (DOOR, 1000, OWN MODEL)"
+font_size = 18
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_h3hc5"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "CONCRETE BARRIER"
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_vaaur"]
+material = SubResource("StandardMaterial3D_anyq2")
+text = "EXFIL LANDS HERE"
+font_size = 64
+curve_step = 4.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_lligr"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "EXFIL RADIO (LIVE FROM ROUND 1)"
+font_size = 14
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_o0k3n"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "MYSTERY BOX"
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8ygs5"]
+resource_name = "debug_title_orange"
+albedo_color = Color(1, 0.45, 0.1, 1)
+roughness = 0.25
+
+[sub_resource type="TextMesh" id="TextMesh_x32lk"]
+material = SubResource("StandardMaterial3D_8ygs5")
+text = "ZM_DEBUG"
+font_size = 96
+pixel_size = 0.02
+curve_step = 4.0
+depth = 0.25
+
+[sub_resource type="TextMesh" id="TextMesh_m6s5c"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "SOUND ROOM: ZM_NACHT_BUNKER_MEDIUM_ROOM"
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_y6tl7"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "SOUND ROOM: ZM_NACHT_BUNKER_HALLWAYS"
+font_size = 14
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_soe5b"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "SOUND ROOM: ZM_NACHT_INTERIOR"
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_v4s75"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "SOUND ROOM: ZM_NACHT_BUNKER_ENTRANCE (PRIORITY 2)"
+font_size = 12
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_tmad6"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "SOUND ROOM: ZM_NACHT_BUNKER_SMALL_ROOM"
+font_size = 12
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_wi1lk"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "SOUND ROOM: ZM_NACHT_BUNKER"
+font_size = 18
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_vj6xt"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "NO SOUND ROOM HERE: THE DEFAULT ROOM"
+font_size = 18
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_762lw"]
+material = SubResource("StandardMaterial3D_anyq2")
+text = "ROUGHNESS 0 TO 1 (NOT METAL)"
+font_size = 20
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_trwaf"]
+material = SubResource("StandardMaterial3D_anyq2")
+text = "METAL, ROUGHNESS 0 TO 1"
+font_size = 20
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_5aajj"]
+material = SubResource("StandardMaterial3D_anyq2")
+text = "COLOURS AND SHAPES (MATTE)"
+font_size = 20
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_4fkbj"]
+material = SubResource("StandardMaterial3D_anyq2")
+text = "TEXTURE MAPS"
+font_size = 20
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_82vgy"]
+material = SubResource("StandardMaterial3D_anyq2")
+text = "SEE-THROUGH AND GLOW (GLOW: NOT SHOWN IN THE GAME YET)"
+font_size = 20
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_fvy83"]
+material = SubResource("StandardMaterial3D_anyq2")
+text = "SPECIAL CASES"
+font_size = 20
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_2k1wo"]
+material = SubResource("StandardMaterial3D_anyq2")
+text = "MATERIALS: EVERYTHING HERE IS SET IN GODOT (NO .GLB)"
+font_size = 22
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_dhwla"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "ROUGH 0.0"
+font_size = 12
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_6odpo"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "ROUGH 0.25"
+font_size = 12
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_ajs3q"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "ROUGH 0.5"
+font_size = 12
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_e5gn5"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "ROUGH 0.75"
+font_size = 12
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_m38p1"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "ROUGH 1.0"
+font_size = 12
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_kt04d"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "GLOSSY RED"
+font_size = 12
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_ouy07"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "GOLD 0.0"
+font_size = 12
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_lvbb5"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "GOLD 0.25"
+font_size = 12
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_w4126"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "GOLD 0.5"
+font_size = 12
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_l7txq"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "GOLD 0.75"
+font_size = 12
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_krhxd"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "GOLD 1.0"
+font_size = 12
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_1r8ut"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "CHROME"
+font_size = 12
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_dh3b1"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "RED BOX"
+font_size = 12
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_g26ug"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "GREEN CYLINDER"
+font_size = 12
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_gu5fj"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "BLUE CAPSULE"
+font_size = 12
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_7v3ex"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "YELLOW PRISM"
+font_size = 12
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_2cd3t"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "WHITE TORUS"
+font_size = 12
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_lpfwm"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "BLACK SPHERE"
+font_size = 12
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_q0xa4"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "COLOUR TEXTURE
+(RED CORNER TOP LEFT)"
+font_size = 12
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_n5xhn"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "TEXTURE x TINT"
+font_size = 12
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_e0slp"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "NORMAL MAP"
+font_size = 12
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_6ico0"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "ROUGHNESS MAP"
+font_size = 12
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_q6h3p"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "METAL MAP
+(RIGHT HALF METAL)"
+font_size = 12
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_epvq7"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "ALL MAPS"
+font_size = 12
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_8sn76"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "CUT-OUT (SCISSOR)"
+font_size = 12
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_jpk14"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "CUT-OUT (HASH), TINTED"
+font_size = 12
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_emlpo"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "GLASS"
+font_size = 12
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_ex106"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "TINTED GLASS"
+font_size = 12
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_viprc"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "GLOW (COLOUR)
+Not working"
+font_size = 12
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_xwoh2"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "GLOW (TEXTURE)
+Not Working"
+font_size = 12
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_t3eoo"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "NAMED mc/mtl_p7_concrete
+_pillar_damage: GAME MATERIAL"
+font_size = 12
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_doqp7"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "MKMESH game_material:
+METAL SCRAP"
+font_size = 12
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_0moq6"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "SHADER MATERIAL:
+THE DEFAULT IN THE GAME"
+font_size = 12
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_lpjdw"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "TEXT AS AN OBJECT"
+font_size = 12
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_l61jt"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "MIRRORED, SCALE X -1
+(RED CORNER TOP RIGHT)"
+font_size = 12
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_qo0ke"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "SQUASHED (1.4, 0.6, 1)"
+font_size = 12
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_37ivb"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "FACES: WALK THROUGH THE HOLE"
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_8k8q8"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "HULL: THE HOLE IS FILLED IN"
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_80fx0"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "NONE: NO COLLISION AT ALL"
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_deqs0"]
+material = SubResource("StandardMaterial3D_anyq2")
+text = "MKMESH COLLISION"
+font_size = 28
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_7h01y"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "LOCKER"
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_m2hca"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "TABLE (HULL FILLS UNDER IT)"
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_akqrx"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "WOOD CRATE"
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_43bca"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "PALLET, NOT SOLID"
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_3p0vy"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "SANDBAGS"
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_mtbtw"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "FLOODLIGHT"
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_wxi33"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "SHOPPING CART"
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_mmum7"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "METAL SHELF"
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_sjqvl"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "PLASTIC CRATE"
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_4qype"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "TOOLBOX"
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_xn1my"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "WOOD CRATE x2 (SCALE 2)"
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_85sgq"]
+material = SubResource("StandardMaterial3D_7546r")
+text = "TILTED CRATE"
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_0spxa"]
+material = SubResource("StandardMaterial3D_anyq2")
+text = "PROPS (GAME MODELS)"
+font_size = 28
+curve_step = 3.0
+depth = 0.0
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_qqvcb"]
+panorama = ExtResource("31_0ex70")
+
+[sub_resource type="Sky" id="Sky_llhjb"]
+sky_material = SubResource("PanoramaSkyMaterial_qqvcb")
+
+[sub_resource type="Environment" id="Environment_v7lu1"]
+background_mode = 2
+sky = SubResource("Sky_llhjb")
+ambient_light_source = 3
+tonemap_mode = 2
+fog_enabled = true
+fog_light_color = Color(0.72, 0.78, 0.86, 1)
+fog_density = 0.003
+fog_sky_affect = 0.2
+
+[node name="zm_debug" type="Node3D" unique_id=3000678]
+script = ExtResource("1_pkvit")
+map_name = "zm_debug"
+title = "Debug"
+author = "mapkit"
+
+[node name="Geometry" type="Node3D" parent="." unique_id=595421166]
+
+[node name="Buildings" type="Node3D" parent="Geometry" unique_id=1852893381]
+
+[node name="Ground" type="CSGBox3D" parent="Geometry/Buildings" unique_id=518886452]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, -22)
+size = Vector3(90, 0.5, 100)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+
+[node name="StartSouthWall" type="CSGBox3D" parent="Geometry/Buildings" unique_id=383722550]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 8.25)
+size = Vector3(33, 4, 0.5)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+
+[node name="StartWestWall" type="CSGBox3D" parent="Geometry/Buildings" unique_id=1040306980]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.25, 2, 0)
+size = Vector3(0.5, 4, 16)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+
+[node name="StartEastWall" type="CSGBox3D" parent="Geometry/Buildings" unique_id=578938086]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.25, 2, 0)
+size = Vector3(0.5, 4, 16)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+
+[node name="StartCeiling" type="CSGBox3D" parent="Geometry/Buildings" unique_id=1557419451]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.25, 0)
+size = Vector3(33, 0.5, 17)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+
+[node name="MiddleWallWest" type="CSGBox3D" parent="Geometry/Buildings" unique_id=252759587]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.875, 2, -8.25)
+size = Vector3(7.25, 4, 0.5)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+
+[node name="MiddleWallCentre" type="CSGBox3D" parent="Geometry/Buildings" unique_id=2070451582]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -8.25)
+size = Vector3(13.5, 4, 0.5)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+
+[node name="MiddleWallEast" type="CSGBox3D" parent="Geometry/Buildings" unique_id=2108925145]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.875, 2, -8.25)
+size = Vector3(7.25, 4, 0.5)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+
+[node name="MiddleLintelGallery" type="CSGBox3D" parent="Geometry/Buildings" unique_id=1810465819]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 3.5, -8.25)
+size = Vector3(2.5, 1, 0.5)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+
+[node name="MiddleLintelMachines" type="CSGBox3D" parent="Geometry/Buildings" unique_id=1920473234]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 3.5, -8.25)
+size = Vector3(2.5, 1, 0.5)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+
+[node name="GalleryWestWallSouth" type="CSGBox3D" parent="Geometry/Buildings" unique_id=444021722]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.25, 2, -9.5)
+size = Vector3(0.5, 4, 2)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+
+[node name="GalleryWestWallNorth" type="CSGBox3D" parent="Geometry/Buildings" unique_id=1699703315]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.25, 2, -17.25)
+size = Vector3(0.5, 4, 13.5)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+
+[node name="GalleryWestLintel" type="CSGBox3D" parent="Geometry/Buildings" unique_id=191340319]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.25, 3.1, -9.6)
+size = Vector3(0.5, 1.8, 1.8000002)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+
+[node name="GalleryWestWallCorner" type="CSGBox3D" parent="Geometry/Buildings" unique_id=77077410]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.25, 2, -8.6)
+size = Vector3(0.5, 4, 0.19999981)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+
+[node name="HallEastWallSouth" type="CSGBox3D" parent="Geometry/Buildings" unique_id=2049621213]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.25, 2, -11.8)
+size = Vector3(0.5, 4, 6.6000004)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+
+[node name="HallEastWallNorth" type="CSGBox3D" parent="Geometry/Buildings" unique_id=1845567483]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.25, 2, -20.45)
+size = Vector3(0.5, 4, 7.1000004)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+
+[node name="HallEastLintel" type="CSGBox3D" parent="Geometry/Buildings" unique_id=628918906]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.25, 3.1, -16)
+size = Vector3(0.5, 1.8, 1.7999992)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+
+[node name="DividingWall" type="CSGBox3D" parent="Geometry/Buildings" unique_id=820470835]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -16.25)
+size = Vector3(0.5, 4, 15.5)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+
+[node name="NorthWallWest" type="CSGBox3D" parent="Geometry/Buildings" unique_id=656563551]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.875, 2, -24.25)
+size = Vector3(23.25, 4, 0.5)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+
+[node name="NorthWallEast" type="CSGBox3D" parent="Geometry/Buildings" unique_id=14957380]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.875, 2, -24.25)
+size = Vector3(7.25, 4, 0.5)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+
+[node name="NorthLintelYard" type="CSGBox3D" parent="Geometry/Buildings" unique_id=1679916907]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 3.5, -24.25)
+size = Vector3(2.5, 1, 0.5)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+
+[node name="NorthCeiling" type="CSGBox3D" parent="Geometry/Buildings" unique_id=656311949]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.25, -16.5)
+size = Vector3(33, 0.5, 16)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+
+[node name="PorchRoof" type="CSGBox3D" parent="Geometry/Buildings" unique_id=1503599049]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 3.65, -26.5)
+size = Vector3(4.5, 0.29999995, 4)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+
+[node name="PorchPostWest" type="CSGBox3D" parent="Geometry/Buildings" unique_id=1705221131]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1.75, -28.25)
+size = Vector3(0.3000002, 3.5, 0.29999924)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+
+[node name="PorchPostEast" type="CSGBox3D" parent="Geometry/Buildings" unique_id=928718394]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 1.75, -28.25)
+size = Vector3(0.29999924, 3.5, 0.29999924)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+
+[node name="GalleryTable1" type="CSGBox3D" parent="Geometry/Buildings" unique_id=482463517]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.1, 0.45, -11)
+size = Vector3(13, 0.9, 0.70000076)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+
+[node name="GalleryTable2" type="CSGBox3D" parent="Geometry/Buildings" unique_id=365018705]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.1, 0.45, -13.4)
+size = Vector3(13, 0.9, 0.6999998)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+
+[node name="GalleryTable3" type="CSGBox3D" parent="Geometry/Buildings" unique_id=926903336]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.1, 0.45, -15.799999)
+size = Vector3(13, 0.9, 0.6999998)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+
+[node name="GalleryTable4" type="CSGBox3D" parent="Geometry/Buildings" unique_id=159532705]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.1, 0.45, -18.2)
+size = Vector3(13, 0.9, 0.69999886)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+
+[node name="GalleryTable5" type="CSGBox3D" parent="Geometry/Buildings" unique_id=749476170]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.1, 0.45, -20.6)
+size = Vector3(13, 0.9, 0.70000076)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+
+[node name="GalleryTable6" type="CSGBox3D" parent="Geometry/Buildings" unique_id=1798335207]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.1, 0.45, -23)
+size = Vector3(13, 0.9, 0.70000076)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+
+[node name="Yard" type="Node3D" parent="Geometry" unique_id=1938589397]
+
+[node name="ShedSouthWallWest" type="CSGBox3D" parent="Geometry/Yard" unique_id=978433645]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.55, 1.5, -35.85)
+size = Vector3(1.6999989, 3, 0.29999924)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+
+[node name="ShedSouthWallEast" type="CSGBox3D" parent="Geometry/Yard" unique_id=1114652899]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.45, 1.5, -35.85)
+size = Vector3(1.6999989, 3, 0.29999924)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+
+[node name="ShedLintel" type="CSGBox3D" parent="Geometry/Yard" unique_id=1925010002]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 2.6, -35.85)
+size = Vector3(1.2000008, 0.79999995, 0.29999924)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+
+[node name="ShedNorthWall" type="CSGBox3D" parent="Geometry/Yard" unique_id=81621037]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 1.5, -40.15)
+size = Vector3(4.5999985, 3, 0.29999924)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+
+[node name="ShedWestWall" type="CSGBox3D" parent="Geometry/Yard" unique_id=1442969456]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.85, 1.5, -38)
+size = Vector3(0.29999924, 3, 4)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+
+[node name="ShedEastWall" type="CSGBox3D" parent="Geometry/Yard" unique_id=72933575]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.15, 1.5, -38)
+size = Vector3(0.29999924, 3, 4)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+
+[node name="ShedRoof" type="CSGBox3D" parent="Geometry/Yard" unique_id=1625641744]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 3.15, -38)
+size = Vector3(4.799999, 0.29999995, 4.800003)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+
+[node name="PavilionPost" type="CSGBox3D" parent="Geometry/Yard" unique_id=1610846431]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.8, 2.1, -43.8)
+size = Vector3(0.29999924, 4.2, 0.30000305)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+
+[node name="PavilionPost_2" type="CSGBox3D" parent="Geometry/Yard" unique_id=1142617982]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.2, 2.1, -43.8)
+size = Vector3(0.29999924, 4.2, 0.30000305)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+
+[node name="PavilionPost_3" type="CSGBox3D" parent="Geometry/Yard" unique_id=1297279615]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.8, 2.1, -34.2)
+size = Vector3(0.29999924, 4.2, 0.30000305)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+
+[node name="PavilionPost_4" type="CSGBox3D" parent="Geometry/Yard" unique_id=1930034692]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.2, 2.1, -34.2)
+size = Vector3(0.29999924, 4.2, 0.30000305)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+
+[node name="PavilionRoof" type="CSGBox3D" parent="Geometry/Yard" unique_id=860413291]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 4.35, -39)
+size = Vector3(10.400002, 0.3000002, 10.400002)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+
+[node name="GameMaterial_CONCRETE_BLOCK_RUSTY" type="CSGBox3D" parent="Geometry/Yard" unique_id=231514714]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 1.5, -46)
+size = Vector3(1.2000008, 3, 1.199997)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+game_material = "mc/mtl_p7_barrier_block_concrete_rusty"
+
+[node name="GameMaterial_CONCRETE_PILLAR" type="CSGBox3D" parent="Geometry/Yard" unique_id=1498728984]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 1.5, -46)
+size = Vector3(1.2000008, 3, 1.199997)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+game_material = "mc/mtl_p7_concrete_pillar_damage"
+
+[node name="GameMaterial_TRASH_PROPS" type="CSGBox3D" parent="Geometry/Yard" unique_id=1102836440]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 1.5, -46)
+size = Vector3(1.2000008, 3, 1.199997)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+game_material = "mc/mtl_com_trash_props_iw6"
+
+[node name="GameMaterial_METAL_SCRAP" type="CSGBox3D" parent="Geometry/Yard" unique_id=476535243]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 1.5, -46)
+size = Vector3(1.2000008, 3, 1.199997)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+game_material = "mc/mtl_p7_debris_metal_scrap_04"
+
+[node name="GameMaterial_DEFAULT_EMPTY" type="CSGBox3D" parent="Geometry/Yard" unique_id=1171511861]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 1.5, -46)
+size = Vector3(1.199997, 3, 1.199997)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+
+[node name="Platform" type="CSGBox3D" parent="Geometry/Yard" unique_id=1184452447]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 1, -58)
+size = Vector3(6, 2, 6)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+
+[node name="Ramp" type="CSGBox3D" parent="Geometry/Yard" unique_id=416737757]
+transform = Transform3D(1, 0, 0, 0, 0.955779, -0.2940859, 0, 0.2940859, 0.955779, 36, 0.8566331, -51.794113)
+size = Vector3(3, 0.3, 6.8007355)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+
+[node name="Step7" type="CSGBox3D" parent="Geometry/Yard" unique_id=577456598]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.175, 0.875, -58)
+size = Vector3(0.34999847, 1.75, 3)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+
+[node name="Step6" type="CSGBox3D" parent="Geometry/Yard" unique_id=1335015721]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.525, 0.75, -58)
+size = Vector3(0.3500023, 1.5, 3)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+
+[node name="Step5" type="CSGBox3D" parent="Geometry/Yard" unique_id=154727319]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.875, 0.625, -58)
+size = Vector3(0.34999847, 1.25, 3)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+
+[node name="Step4" type="CSGBox3D" parent="Geometry/Yard" unique_id=407408410]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.225, 0.5, -58)
+size = Vector3(0.3500023, 1, 3)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+
+[node name="Step3" type="CSGBox3D" parent="Geometry/Yard" unique_id=1789630904]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.575, 0.375, -58)
+size = Vector3(0.34999847, 0.75, 3)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+
+[node name="Step2" type="CSGBox3D" parent="Geometry/Yard" unique_id=1140566088]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.925, 0.25, -58)
+size = Vector3(0.34999847, 0.5, 3)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+
+[node name="Step1" type="CSGBox3D" parent="Geometry/Yard" unique_id=1845787502]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.275, 0.125, -58)
+size = Vector3(0.3500023, 0.25, 3)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+
+[node name="InvisibleWall" type="CSGBox3D" parent="Geometry/Yard" unique_id=1208296034]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 1.5, -66)
+size = Vector3(6, 3, 0.30000305)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+rendered = false
+
+[node name="WalkThroughWall" type="CSGBox3D" parent="Geometry/Yard" unique_id=1730683603]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 1.5, -66)
+size = Vector3(4, 3, 0.30000305)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+solid = false
+
+[node name="PlainCSGBox3D" type="CSGBox3D" parent="Geometry/Yard" unique_id=207624708]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 0.5, -66)
+material = ExtResource("2_pehrx")
+
+[node name="TurnedStretchedBrush" type="CSGBox3D" parent="Geometry/Yard" unique_id=502290830]
+transform = Transform3D(1.6815453, 0.050950095, 0.53898555, 0.32635182, 0.9254165, -0.34202012, -1.0324243, 0.37551063, 0.76975113, 21, 1.4, -56)
+material = ExtResource("2_pehrx")
+script = ExtResource("3_gfn7l")
+
+[node name="Gameplay" type="Node3D" parent="." unique_id=1246417400]
+
+[node name="StartRoom" type="Node3D" parent="Gameplay" unique_id=1358376118]
+
+[node name="StartZone" type="Node3D" parent="Gameplay/StartRoom" unique_id=1534697964]
+script = ExtResource("4_4m2w3")
+active_at_start = true
+size = Vector3(32, 4, 16)
+
+[node name="PlayerSpawn1" type="Node3D" parent="Gameplay/StartRoom" unique_id=873022280]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 2)
+script = ExtResource("5_irnie")
+player = 1
+
+[node name="PlayerSpawn2" type="Node3D" parent="Gameplay/StartRoom" unique_id=1368352335]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 2)
+script = ExtResource("5_irnie")
+player = 2
+
+[node name="PlayerSpawn3" type="Node3D" parent="Gameplay/StartRoom" unique_id=1962559919]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 4)
+script = ExtResource("5_irnie")
+player = 3
+
+[node name="PlayerSpawn4" type="Node3D" parent="Gameplay/StartRoom" unique_id=1352118949]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 4)
+script = ExtResource("5_irnie")
+player = 4
+
+[node name="Perk_juggernog" type="Node3D" parent="Gameplay/StartRoom" unique_id=1759861187]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.6, 0, 7.3)
+script = ExtResource("6_uwgm8")
+perk = "juggernog"
+
+[node name="Perk_speed_cola" type="Node3D" parent="Gameplay/StartRoom" unique_id=1159971322]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.8, 0, 7.3)
+script = ExtResource("6_uwgm8")
+perk = "speed_cola"
+
+[node name="Perk_quick_revive" type="Node3D" parent="Gameplay/StartRoom" unique_id=1980026228]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 7.3)
+script = ExtResource("6_uwgm8")
+perk = "quick_revive"
+
+[node name="Perk_stamin_up" type="Node3D" parent="Gameplay/StartRoom" unique_id=2038062950]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2, 0, 7.3)
+script = ExtResource("6_uwgm8")
+perk = "stamin_up"
+
+[node name="Perk_deadshot_dealer" type="Node3D" parent="Gameplay/StartRoom" unique_id=1127960233]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4, 0, 7.3)
+script = ExtResource("6_uwgm8")
+perk = "deadshot_dealer"
+
+[node name="Perk_elemental_pop" type="Node3D" parent="Gameplay/StartRoom" unique_id=1070822610]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4, 0, 7.3)
+script = ExtResource("6_uwgm8")
+perk = "elemental_pop"
+
+[node name="Perk_tombstone_soda" type="Node3D" parent="Gameplay/StartRoom" unique_id=288740928]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2, 0, 7.3)
+script = ExtResource("6_uwgm8")
+perk = "tombstone_soda"
+
+[node name="Perk_mule_kick" type="Node3D" parent="Gameplay/StartRoom" unique_id=1131975346]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 7.3)
+script = ExtResource("6_uwgm8")
+perk = "mule_kick"
+
+[node name="Perk_phd_flopper" type="Node3D" parent="Gameplay/StartRoom" unique_id=1961167205]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.8, 0, 7.3)
+script = ExtResource("6_uwgm8")
+
+[node name="Perk_death_perception" type="Node3D" parent="Gameplay/StartRoom" unique_id=997838115]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6, 0, 7.3)
+script = ExtResource("6_uwgm8")
+perk = "death_perception"
+
+[node name="WallBuy_ar_accurate_t9" type="Node3D" parent="Gameplay/StartRoom" unique_id=945261801]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -15.99, 0, -6)
+script = ExtResource("7_wf4lr")
+weapon = "ar_accurate_t9"
+cost = 1500
+
+[node name="WallBuy_ar_standard_t9" type="Node3D" parent="Gameplay/StartRoom" unique_id=1285061194]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -15.99, 0, -4)
+script = ExtResource("7_wf4lr")
+weapon = "ar_standard_t9"
+cost = 1500
+
+[node name="WallBuy_smg_standard_t9" type="Node3D" parent="Gameplay/StartRoom" unique_id=1580701222]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -15.99, 0, -2)
+script = ExtResource("7_wf4lr")
+weapon = "smg_standard_t9"
+cost = 1250
+
+[node name="WallBuy_smg_heavy_t9" type="Node3D" parent="Gameplay/StartRoom" unique_id=1212883717]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -15.768522, 0, 0)
+script = ExtResource("7_wf4lr")
+weapon = "smg_heavy_t9"
+cost = 1250
+
+[node name="WallBuy_lmg_light_t9" type="Node3D" parent="Gameplay/StartRoom" unique_id=620001549]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -15.560969, 0, 2)
+script = ExtResource("7_wf4lr")
+weapon = "lmg_light_t9"
+cost = 2000
+
+[node name="WallBuy_sniper_standard_t9" type="Node3D" parent="Gameplay/StartRoom" unique_id=591342734]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -15.766756, 0, 4)
+script = ExtResource("7_wf4lr")
+weapon = "sniper_standard_t9"
+cost = 1500
+
+[node name="WallBuy_shotgun_pump_t9" type="Node3D" parent="Gameplay/StartRoom" unique_id=195968141]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 15.99, 0, -6)
+script = ExtResource("7_wf4lr")
+weapon = "shotgun_pump_t9"
+cost = 1000
+
+[node name="WallBuy_shotgun_semiauto_t9" type="Node3D" parent="Gameplay/StartRoom" unique_id=1697205944]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 15.99, 0, -4)
+script = ExtResource("7_wf4lr")
+weapon = "shotgun_semiauto_t9"
+cost = 1000
+
+[node name="WallBuy_pistol_burst_t9" type="Node3D" parent="Gameplay/StartRoom" unique_id=1280719950]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 15.99, 0, -2)
+script = ExtResource("7_wf4lr")
+weapon = "pistol_burst_t9"
+
+[node name="WallBuy_pistol_semiauto_t9" type="Node3D" parent="Gameplay/StartRoom" unique_id=1476357821]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 15.99, 0, 0)
+script = ExtResource("7_wf4lr")
+weapon = "pistol_semiauto_t9"
+
+[node name="WallBuy_tr_longburst_t9" type="Node3D" parent="Gameplay/StartRoom" unique_id=1314168557]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 15.99, 0, 2)
+script = ExtResource("7_wf4lr")
+weapon = "tr_longburst_t9"
+cost = 1250
+
+[node name="WallBuy_tr_damagesemi_t9" type="Node3D" parent="Gameplay/StartRoom" unique_id=6519253]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 15.99, 0, 4)
+script = ExtResource("7_wf4lr")
+weapon = "tr_damagesemi_t9"
+cost = 1250
+
+[node name="MysteryBoxStart" type="Node3D" parent="Gameplay/StartRoom" unique_id=1720995574]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -9, 0, -3)
+script = ExtResource("8_hl1kx")
+start_here = true
+
+[node name="PowerSwitch" type="Node3D" parent="Gameplay/StartRoom" unique_id=114692806]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, -7.6)
+script = ExtResource("9_tfqaq")
+
+[node name="AmmoCache" type="Node3D" parent="Gameplay/StartRoom" unique_id=1958992531]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 13.5, 0, -6.5)
+script = ExtResource("10_3uikg")
+
+[node name="SpawnerStartWest" type="Node3D" parent="Gameplay/StartRoom" unique_id=427772370]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.5, 0, 6.3)
+script = ExtResource("11_7eshx")
+
+[node name="SpawnerStartEast" type="Node3D" parent="Gameplay/StartRoom" unique_id=1758396693]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5, 0, 6.3)
+script = ExtResource("11_7eshx")
+
+[node name="DoorToMachines" type="Node3D" parent="Gameplay/StartRoom" unique_id=1592843856]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -8.25)
+script = ExtResource("12_f32rv")
+cost = 500
+opens = "machines"
+size = Vector3(2.5, 3, 0.5)
+
+[node name="DebrisToGallery" type="Node3D" parent="Gameplay/StartRoom" unique_id=1522296314]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -8.25)
+script = ExtResource("12_f32rv")
+kind = "debris"
+opens = "gallery"
+needs_power = true
+size = Vector3(2.5, 3, 0.5)
+
+[node name="MachinesHall" type="Node3D" parent="Gameplay" unique_id=1555207763]
+
+[node name="MachinesZone" type="Node3D" parent="Gameplay/MachinesHall" unique_id=1165941485]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.125, 0, -16.25)
+script = ExtResource("4_4m2w3")
+zone_name = "machines"
+size = Vector3(15.75, 4, 15.5)
+
+[node name="Arsenal" type="Node3D" parent="Gameplay/MachinesHall" unique_id=1192961492]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.2, 0, -11.5)
+script = ExtResource("13_jid6o")
+needs_power = false
+
+[node name="ArmorStation" type="Node3D" parent="Gameplay/MachinesHall" unique_id=750465027]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.2, 0, -16)
+script = ExtResource("14_yffjt")
+
+[node name="Wunderfizz" type="Node3D" parent="Gameplay/MachinesHall" unique_id=959374214]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.45, 0, -20.8)
+script = ExtResource("15_nyfyu")
+
+[node name="CraftingTable" type="Node3D" parent="Gameplay/MachinesHall" unique_id=70837855]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 14.9, 0, -11)
+script = ExtResource("16_asq35")
+
+[node name="PackAPunch" type="Node3D" parent="Gameplay/MachinesHall" unique_id=1850999950]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 14.8, 0, -20.5)
+script = ExtResource("17_xosou")
+
+[node name="MysteryBoxHall" type="Node3D" parent="Gameplay/MachinesHall" unique_id=1697118909]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 11.5, 0, -23.2)
+script = ExtResource("8_hl1kx")
+
+[node name="BarrierWood" type="Node3D" parent="Gameplay/MachinesHall" unique_id=2080052606]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 16.25, 0, -16)
+script = ExtResource("18_nso1v")
+zone = "machines"
+
+[node name="SpawnerHallBarrier" type="Node3D" parent="Gameplay/MachinesHall" unique_id=1982153353]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 19.5, 0, -16)
+script = ExtResource("11_7eshx")
+zone = "machines"
+kind = "barrier"
+
+[node name="SpawnerHall" type="Node3D" parent="Gameplay/MachinesHall" unique_id=699296853]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, -17)
+script = ExtResource("11_7eshx")
+zone = "machines"
+
+[node name="DoorToYard" type="Node3D" parent="Gameplay/MachinesHall" unique_id=718905073]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -24.25)
+script = ExtResource("12_f32rv")
+cost = 1000
+opens = "yard"
+model = "p7_door_metal_industrial_dmg_white_nosign"
+size = Vector3(2.5, 3, 0.5)
+
+[node name="MkBarrier" type="Node3D" parent="Gameplay/MachinesHall" unique_id=153127699]
+script = ExtResource("18_nso1v")
+metadata/_custom_type_script = "uid://cifjlj56qsxb1"
+
+[node name="Gallery" type="Node3D" parent="Gameplay" unique_id=2037308338]
+
+[node name="GalleryZone" type="Node3D" parent="Gameplay/Gallery" unique_id=948004483]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.125, 0, -16.25)
+script = ExtResource("4_4m2w3")
+zone_name = "gallery"
+size = Vector3(15.75, 4, 15.5)
+
+[node name="BarrierConcrete" type="Node3D" parent="Gameplay/Gallery" unique_id=43374913]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -16.25, 0, -9.6)
+script = ExtResource("18_nso1v")
+zone = "gallery"
+kind = "concrete"
+
+[node name="SpawnerGalleryBarrier" type="Node3D" parent="Gameplay/Gallery" unique_id=162420638]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -19.5, 0, -9.6)
+script = ExtResource("11_7eshx")
+zone = "gallery"
+kind = "barrier"
+
+[node name="SpawnerGallery" type="Node3D" parent="Gameplay/Gallery" unique_id=313244851]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.2, 0, -23.2)
+script = ExtResource("11_7eshx")
+zone = "gallery"
+
+[node name="Yard" type="Node3D" parent="Gameplay" unique_id=1647292139]
+
+[node name="YardZone" type="Node3D" parent="Gameplay/Yard" unique_id=680986782]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -48.25)
+script = ExtResource("4_4m2w3")
+zone_name = "yard"
+size = Vector3(90, 8, 47.5)
+
+[node name="Exfil" type="Node3D" parent="Gameplay/Yard" unique_id=2056545626]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -50)
+script = ExtResource("19_hmbwi")
+hold_seconds = 60
+radio_live_at_start = true
+
+[node name="ExfilRadio" type="Node3D" parent="Gameplay/Yard" unique_id=1047539447]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5.4, 0, -27)
+script = ExtResource("20_cnl4b")
+
+[node name="MysteryBoxPavilion" type="Node3D" parent="Gameplay/Yard" unique_id=987869029]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -25, 0, -39)
+script = ExtResource("8_hl1kx")
+
+[node name="SpawnerYard" type="Node3D" parent="Gameplay/Yard" unique_id=1543216234]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, -58)
+script = ExtResource("11_7eshx")
+zone = "yard"
+
+[node name="SpawnerYard_2" type="Node3D" parent="Gameplay/Yard" unique_id=1502089836]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -34)
+script = ExtResource("11_7eshx")
+zone = "yard"
+
+[node name="Props" type="Node3D" parent="Gameplay" unique_id=52336336]
+
+[node name="Prop_LOCKER" type="Node3D" parent="Gameplay/Props" unique_id=1730569031]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -36, 0, -30)
+script = ExtResource("21_86rff")
+model = "p7_rus_locker_closed"
+
+[node name="Prop_TABLE_HULL_FILLS_UN" type="Node3D" parent="Gameplay/Props" unique_id=253128612]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -36, 0, -33.2)
+script = ExtResource("21_86rff")
+model = "p7_table_rectangle_wood_02"
+
+[node name="Prop_WOOD_CRATE" type="Node3D" parent="Gameplay/Props" unique_id=519809413]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -36, 0, -36.4)
+script = ExtResource("21_86rff")
+model = "p7_wes_crate_wood_01"
+
+[node name="Prop_PALLET_NOT_SOLID" type="Node3D" parent="Gameplay/Props" unique_id=1468193053]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -36, 0, -39.6)
+script = ExtResource("21_86rff")
+model = "p7_pallet_wood_destroyed"
+solid = false
+
+[node name="Prop_SANDBAGS" type="Node3D" parent="Gameplay/Props" unique_id=515336813]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -36, 0, -42.8)
+script = ExtResource("21_86rff")
+model = "p7_sandbag_stack_44_middle"
+
+[node name="Prop_FLOODLIGHT" type="Node3D" parent="Gameplay/Props" unique_id=358587270]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -36, 0, -46)
+script = ExtResource("21_86rff")
+model = "p7_ban_light_floodlight"
+
+[node name="Prop_SHOPPING_CART" type="Node3D" parent="Gameplay/Props" unique_id=1454715990]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -36, 0, -49.2)
+script = ExtResource("21_86rff")
+model = "p7_shopping_cart_aluminum"
+
+[node name="Prop_METAL_SHELF" type="Node3D" parent="Gameplay/Props" unique_id=1133685686]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -36, 0, -52.4)
+script = ExtResource("21_86rff")
+model = "p7_rus_bookshelf_metal"
+
+[node name="Prop_PLASTIC_CRATE" type="Node3D" parent="Gameplay/Props" unique_id=1103361141]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -36, 0, -55.6)
+script = ExtResource("21_86rff")
+model = "p7_slu_crate_plastic_red"
+
+[node name="Prop_TOOLBOX" type="Node3D" parent="Gameplay/Props" unique_id=1313181253]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -36, 0, -58.8)
+script = ExtResource("21_86rff")
+model = "p7_toolbox_handheld_small_red"
+
+[node name="Prop_WOOD_CRATE_x2_SCALE" type="Node3D" parent="Gameplay/Props" unique_id=1333322159]
+transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, -36, 0, -62)
+script = ExtResource("21_86rff")
+model = "p7_wes_crate_wood_01"
+
+[node name="Prop_TILTED_CRATE" type="Node3D" parent="Gameplay/Props" unique_id=1558087283]
+transform = Transform3D(0.38823557, -0.48293662, -0.7848856, 0.23456971, 0.87542605, -0.42261827, 0.89120716, -0.020034939, 0.45315385, -36, 0.4, -65.2)
+script = ExtResource("21_86rff")
+model = "p7_slu_crate_plastic_red"
+
+[node name="SoundRooms" type="Node3D" parent="." unique_id=1403267549]
+
+[node name="Room_StartRoom" type="Node3D" parent="SoundRooms" unique_id=2011858321]
+script = ExtResource("22_5kpg5")
+room = "zm_nacht_bunker_medium_room"
+size = Vector3(32, 4, 16)
+
+[node name="Room_MachinesHall" type="Node3D" parent="SoundRooms" unique_id=567394111]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.125, 0, -16.25)
+script = ExtResource("22_5kpg5")
+room = "zm_nacht_bunker_hallways"
+size = Vector3(15.75, 4, 15.5)
+
+[node name="Room_Gallery" type="Node3D" parent="SoundRooms" unique_id=589329034]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.125, 0, -16.25)
+script = ExtResource("22_5kpg5")
+room = "zm_nacht_interior"
+size = Vector3(15.75, 4, 15.5)
+
+[node name="Room_Porch" type="Node3D" parent="SoundRooms" unique_id=1856004683]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -26)
+script = ExtResource("22_5kpg5")
+room = "zm_nacht_bunker_entrance"
+priority = 2
+size = Vector3(4.5, 3.5, 5)
+
+[node name="Room_Shed" type="Node3D" parent="SoundRooms" unique_id=798593451]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -38)
+script = ExtResource("22_5kpg5")
+room = "zm_nacht_bunker_small_room"
+size = Vector3(4, 3, 4)
+
+[node name="Room_Pavilion" type="Node3D" parent="SoundRooms" unique_id=1674126785]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, -39)
+script = ExtResource("22_5kpg5")
+room = "zm_nacht_bunker"
+size = Vector3(10, 4.2, 10)
+
+[node name="Showcase" type="Node3D" parent="." unique_id=560477189]
+
+[node name="GallerySamples" type="Node3D" parent="Showcase" unique_id=279947657]
+script = ExtResource("23_8etbb")
+collision = "hull"
+
+[node name="Sample_ROUGH_0_0" type="MeshInstance3D" parent="Showcase/GallerySamples" unique_id=73016944]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 1.3, -11)
+mesh = SubResource("SphereMesh_1qqvt")
+surface_material_override/0 = SubResource("StandardMaterial3D_axh2v")
+
+[node name="Sample_ROUGH_0_25" type="MeshInstance3D" parent="Showcase/GallerySamples" unique_id=1842950023]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6, 1.3, -11)
+mesh = SubResource("SphereMesh_1qqvt")
+surface_material_override/0 = SubResource("StandardMaterial3D_p06cy")
+
+[node name="Sample_ROUGH_0_5" type="MeshInstance3D" parent="Showcase/GallerySamples" unique_id=1327555802]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.2, 1.3, -11)
+mesh = SubResource("SphereMesh_1qqvt")
+surface_material_override/0 = SubResource("StandardMaterial3D_064na")
+
+[node name="Sample_ROUGH_0_75" type="MeshInstance3D" parent="Showcase/GallerySamples" unique_id=1202522035]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8, 1.3, -11)
+mesh = SubResource("SphereMesh_1qqvt")
+surface_material_override/0 = SubResource("StandardMaterial3D_e0u8e")
+
+[node name="Sample_ROUGH_1_0" type="MeshInstance3D" parent="Showcase/GallerySamples" unique_id=1321714362]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4, 1.3, -11)
+mesh = SubResource("SphereMesh_1qqvt")
+surface_material_override/0 = SubResource("StandardMaterial3D_hus0o")
+
+[node name="Sample_GLOSSY_RED" type="MeshInstance3D" parent="Showcase/GallerySamples" unique_id=2097418648]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1.3, -11)
+mesh = SubResource("SphereMesh_1qqvt")
+surface_material_override/0 = SubResource("StandardMaterial3D_glbxm")
+
+[node name="Sample_GOLD_0_0" type="MeshInstance3D" parent="Showcase/GallerySamples" unique_id=2070417990]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 1.3, -13.4)
+mesh = SubResource("SphereMesh_1qqvt")
+surface_material_override/0 = SubResource("StandardMaterial3D_ubo5l")
+
+[node name="Sample_GOLD_0_25" type="MeshInstance3D" parent="Showcase/GallerySamples" unique_id=352447251]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6, 1.3, -13.4)
+mesh = SubResource("SphereMesh_1qqvt")
+surface_material_override/0 = SubResource("StandardMaterial3D_67qxi")
+
+[node name="Sample_GOLD_0_5" type="MeshInstance3D" parent="Showcase/GallerySamples" unique_id=758078068]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.2, 1.3, -13.4)
+mesh = SubResource("SphereMesh_1qqvt")
+surface_material_override/0 = SubResource("StandardMaterial3D_t5pwk")
+
+[node name="Sample_GOLD_0_75" type="MeshInstance3D" parent="Showcase/GallerySamples" unique_id=2019541364]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8, 1.3, -13.4)
+mesh = SubResource("SphereMesh_1qqvt")
+surface_material_override/0 = SubResource("StandardMaterial3D_jrxbb")
+
+[node name="Sample_GOLD_1_0" type="MeshInstance3D" parent="Showcase/GallerySamples" unique_id=1291645104]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4, 1.3, -13.4)
+mesh = SubResource("SphereMesh_1qqvt")
+surface_material_override/0 = SubResource("StandardMaterial3D_l1wgu")
+
+[node name="Sample_CHROME" type="MeshInstance3D" parent="Showcase/GallerySamples" unique_id=1123249888]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1.3, -13.4)
+mesh = SubResource("SphereMesh_1qqvt")
+surface_material_override/0 = SubResource("StandardMaterial3D_c8587")
+
+[node name="Sample_RED_BOX" type="MeshInstance3D" parent="Showcase/GallerySamples" unique_id=1764333518]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 1.25, -15.8)
+mesh = SubResource("BoxMesh_jmttj")
+surface_material_override/0 = SubResource("StandardMaterial3D_6db3e")
+
+[node name="Sample_GREEN_CYLINDER" type="MeshInstance3D" parent="Showcase/GallerySamples" unique_id=219191338]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6, 1.3, -15.8)
+mesh = SubResource("CylinderMesh_otjpv")
+surface_material_override/0 = SubResource("StandardMaterial3D_dk3no")
+
+[node name="Sample_BLUE_CAPSULE" type="MeshInstance3D" parent="Showcase/GallerySamples" unique_id=717677296]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.2, 1.35, -15.8)
+mesh = SubResource("CapsuleMesh_sbxbn")
+surface_material_override/0 = SubResource("StandardMaterial3D_xfuou")
+
+[node name="Sample_YELLOW_PRISM" type="MeshInstance3D" parent="Showcase/GallerySamples" unique_id=130134166]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8, 1.25, -15.8)
+mesh = SubResource("PrismMesh_jvidv")
+surface_material_override/0 = SubResource("StandardMaterial3D_gdyit")
+
+[node name="Sample_WHITE_TORUS" type="MeshInstance3D" parent="Showcase/GallerySamples" unique_id=1603967418]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -4.4, 1.3, -15.8)
+mesh = SubResource("TorusMesh_01dqg")
+surface_material_override/0 = SubResource("StandardMaterial3D_kwyy2")
+
+[node name="Sample_BLACK_SPHERE" type="MeshInstance3D" parent="Showcase/GallerySamples" unique_id=1179015243]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1.3, -15.8)
+mesh = SubResource("SphereMesh_1qqvt")
+surface_material_override/0 = SubResource("StandardMaterial3D_bocn5")
+
+[node name="Sample_ALL_MAPS" type="MeshInstance3D" parent="Showcase/GallerySamples" unique_id=1363679512]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1.3, -18.2)
+mesh = SubResource("SphereMesh_1qqvt")
+surface_material_override/0 = SubResource("StandardMaterial3D_oxfkx")
+
+[node name="Sample_GLOW_COLOUR" type="MeshInstance3D" parent="Showcase/GallerySamples" unique_id=707068724]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4, 1.25, -20.6)
+mesh = SubResource("BoxMesh_jmttj")
+surface_material_override/0 = SubResource("StandardMaterial3D_m8pbu")
+
+[node name="Sample_NAMED_mc_mtl_p7_concrete" type="MeshInstance3D" parent="Showcase/GallerySamples" unique_id=1654559990]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 1.25, -23)
+mesh = SubResource("BoxMesh_jmttj")
+surface_material_override/0 = SubResource("StandardMaterial3D_f7qyh")
+
+[node name="Sample_SHADER_MATERIAL_THE_DEF" type="MeshInstance3D" parent="Showcase/GallerySamples" unique_id=765656037]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.2, 1.25, -23)
+mesh = SubResource("BoxMesh_jmttj")
+surface_material_override/0 = SubResource("ShaderMaterial_80uox")
+
+[node name="Sample_TEXT_AS_AN_OBJECT" type="MeshInstance3D" parent="Showcase/GallerySamples" unique_id=242110320]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8, 1.15, -23)
+mesh = SubResource("TextMesh_pfi1n")
+surface_material_override/0 = SubResource("StandardMaterial3D_yq8b4")
+
+[node name="Sample_SQUASHED_1_4_0_6_1" type="MeshInstance3D" parent="Showcase/GallerySamples" unique_id=1523714736]
+transform = Transform3D(1.4, 0, 0, 0, 0.6, 0, 0, 0, 1, -2, 1.25, -23)
+mesh = SubResource("SphereMesh_1qqvt")
+surface_material_override/0 = SubResource("StandardMaterial3D_oxfkx")
+
+[node name="GalleryPanels" type="Node3D" parent="Showcase" unique_id=603963371]
+script = ExtResource("23_8etbb")
+
+[node name="Sample_COLOUR_TEXTURE_RED_CORN" type="MeshInstance3D" parent="Showcase/GalleryPanels" unique_id=974057227]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 1.4, -18.2)
+mesh = SubResource("QuadMesh_7rn23")
+surface_material_override/0 = SubResource("StandardMaterial3D_p1i7b")
+
+[node name="Sample_TEXTURE_x_TINT" type="MeshInstance3D" parent="Showcase/GalleryPanels" unique_id=2084086946]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6, 1.4, -18.2)
+mesh = SubResource("QuadMesh_7rn23")
+surface_material_override/0 = SubResource("StandardMaterial3D_o4lh2")
+
+[node name="Sample_NORMAL_MAP" type="MeshInstance3D" parent="Showcase/GalleryPanels" unique_id=663865524]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.2, 1.4, -18.2)
+mesh = SubResource("QuadMesh_7rn23")
+surface_material_override/0 = SubResource("StandardMaterial3D_rbxc7")
+
+[node name="Sample_ROUGHNESS_MAP" type="MeshInstance3D" parent="Showcase/GalleryPanels" unique_id=116002490]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8, 1.4, -18.2)
+mesh = SubResource("QuadMesh_7rn23")
+surface_material_override/0 = SubResource("StandardMaterial3D_keebv")
+
+[node name="Sample_METAL_MAP_RIGHT_HALF_ME" type="MeshInstance3D" parent="Showcase/GalleryPanels" unique_id=674259846]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4, 1.4, -18.2)
+mesh = SubResource("QuadMesh_7rn23")
+surface_material_override/0 = SubResource("StandardMaterial3D_se6ea")
+
+[node name="Sample_CUT_OUT_SCISSOR" type="MeshInstance3D" parent="Showcase/GalleryPanels" unique_id=1040452233]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 1.4, -20.6)
+mesh = SubResource("QuadMesh_7rn23")
+surface_material_override/0 = SubResource("StandardMaterial3D_wr27o")
+
+[node name="Sample_CUT_OUT_HASH_TINTED" type="MeshInstance3D" parent="Showcase/GalleryPanels" unique_id=691865722]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6, 1.4, -20.6)
+mesh = SubResource("QuadMesh_7rn23")
+surface_material_override/0 = SubResource("StandardMaterial3D_7fdfb")
+
+[node name="Sample_GLASS" type="MeshInstance3D" parent="Showcase/GalleryPanels" unique_id=724407820]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.2, 1.4, -20.6)
+mesh = SubResource("QuadMesh_7rn23")
+surface_material_override/0 = SubResource("StandardMaterial3D_ivf82")
+
+[node name="Sample_TINTED_GLASS" type="MeshInstance3D" parent="Showcase/GalleryPanels" unique_id=1896944860]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8, 1.4, -20.6)
+mesh = SubResource("QuadMesh_7rn23")
+surface_material_override/0 = SubResource("StandardMaterial3D_boqif")
+
+[node name="Sample_GLOW_TEXTURE" type="MeshInstance3D" parent="Showcase/GalleryPanels" unique_id=1084366607]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1.4, -20.6)
+mesh = SubResource("QuadMesh_7rn23")
+surface_material_override/0 = SubResource("StandardMaterial3D_10wij")
+
+[node name="Sample_MIRRORED_SCALE_X_1_RE" type="MeshInstance3D" parent="Showcase/GalleryPanels" unique_id=28570716]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4, 1.4, -23)
+mesh = SubResource("QuadMesh_7rn23")
+surface_material_override/0 = SubResource("StandardMaterial3D_p1i7b")
+
+[node name="GalleryNodeGameMaterial" type="Node3D" parent="Showcase" unique_id=860140476]
+script = ExtResource("23_8etbb")
+collision = "hull"
+game_material = "mc/mtl_p7_debris_metal_scrap_04"
+
+[node name="Sample_MKMESH_game_material_ME" type="MeshInstance3D" parent="Showcase/GalleryNodeGameMaterial" unique_id=2073826940]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6, 1.25, -23)
+material_override = SubResource("StandardMaterial3D_3ihns")
+mesh = SubResource("BoxMesh_jmttj")
+
+[node name="Collision_faces" type="Node3D" parent="Showcase" unique_id=1786417166]
+script = ExtResource("23_8etbb")
+
+[node name="Ring" type="MeshInstance3D" parent="Showcase/Collision_faces" unique_id=695003841]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -18, 1.3, -64)
+mesh = SubResource("TorusMesh_co2x3")
+surface_material_override/0 = SubResource("StandardMaterial3D_7qe0r")
+
+[node name="Collision_hull" type="Node3D" parent="Showcase" unique_id=1222753309]
+script = ExtResource("23_8etbb")
+collision = "hull"
+
+[node name="Ring_2" type="MeshInstance3D" parent="Showcase/Collision_hull" unique_id=1923799834]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -12, 1.3, -64)
+mesh = SubResource("TorusMesh_co2x3")
+surface_material_override/0 = SubResource("StandardMaterial3D_7qe0r")
+
+[node name="Collision_none" type="Node3D" parent="Showcase" unique_id=1043900833]
+script = ExtResource("23_8etbb")
+collision = "none"
+
+[node name="Ring_3" type="MeshInstance3D" parent="Showcase/Collision_none" unique_id=622467895]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -6, 1.3, -64)
+mesh = SubResource("TorusMesh_co2x3")
+surface_material_override/0 = SubResource("StandardMaterial3D_7qe0r")
+
+[node name="Signs" type="Node3D" parent="." unique_id=1439947157]
+script = ExtResource("23_8etbb")
+collision = "none"
+
+[node name="Label_CONCRETE_BLOCK_RUSTY" type="MeshInstance3D" parent="Signs" unique_id=2074185468]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 3.3, -45.35)
+cast_shadow = 0
+mesh = SubResource("TextMesh_xq6uf")
+
+[node name="Label_CONCRETE_PILLAR" type="MeshInstance3D" parent="Signs" unique_id=1131104630]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 3.3, -45.35)
+cast_shadow = 0
+mesh = SubResource("TextMesh_vmkxc")
+
+[node name="Label_TRASH_PROPS" type="MeshInstance3D" parent="Signs" unique_id=1214353802]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 3.3, -45.35)
+cast_shadow = 0
+mesh = SubResource("TextMesh_iy3rk")
+
+[node name="Label_METAL_SCRAP" type="MeshInstance3D" parent="Signs" unique_id=570474899]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 3.3, -45.35)
+cast_shadow = 0
+mesh = SubResource("TextMesh_npdes")
+
+[node name="Label_DEFAULT_EMPTY" type="MeshInstance3D" parent="Signs" unique_id=1467745122]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 3.3, -45.35)
+cast_shadow = 0
+mesh = SubResource("TextMesh_ludsk")
+
+[node name="Label_BRUSHES_GAME_MATERIALS" type="MeshInstance3D" parent="Signs" unique_id=861724392]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 4, -45.35)
+cast_shadow = 0
+mesh = SubResource("TextMesh_r4iir")
+
+[node name="Label_RAMP" type="MeshInstance3D" parent="Signs" unique_id=1019097058]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 2.6, -48.4)
+cast_shadow = 0
+mesh = SubResource("TextMesh_jt2lu")
+
+[node name="Label_STAIRS" type="MeshInstance3D" parent="Signs" unique_id=453907158]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.4, 2.6, -56.4)
+cast_shadow = 0
+mesh = SubResource("TextMesh_6eeyp")
+
+[node name="Label_INVISIBLE_WALL_CLIP" type="MeshInstance3D" parent="Signs" unique_id=682465226]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 3.3, -65.8)
+cast_shadow = 0
+mesh = SubResource("TextMesh_o6uws")
+
+[node name="Label_WALK_THROUGH_NOT_SOLID" type="MeshInstance3D" parent="Signs" unique_id=1310648289]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 3.3, -65.8)
+cast_shadow = 0
+mesh = SubResource("TextMesh_vasty")
+
+[node name="Label_PLAIN_CSGBOX3D" type="MeshInstance3D" parent="Signs" unique_id=1781531694]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 1.4, -65.45)
+cast_shadow = 0
+mesh = SubResource("TextMesh_i672a")
+
+[node name="Label_TURNED_STRETCHED" type="MeshInstance3D" parent="Signs" unique_id=1463460613]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 2.9, -55.4)
+cast_shadow = 0
+mesh = SubResource("TextMesh_ff2mt")
+
+[node name="Label_JUGGERNOG" type="MeshInstance3D" parent="Signs" unique_id=1055487609]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -12.6, 2.75, 7)
+cast_shadow = 0
+mesh = SubResource("TextMesh_sl5sr")
+
+[node name="Label_SPEED_COLA" type="MeshInstance3D" parent="Signs" unique_id=1900379512]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -9.8, 2.75, 7)
+cast_shadow = 0
+mesh = SubResource("TextMesh_ifhdv")
+
+[node name="Label_QUICK_REVIVE" type="MeshInstance3D" parent="Signs" unique_id=256856124]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -7, 2.75, 7)
+cast_shadow = 0
+mesh = SubResource("TextMesh_4hnfb")
+
+[node name="Label_STAMIN_UP" type="MeshInstance3D" parent="Signs" unique_id=1009493327]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -4.2, 2.75, 7)
+cast_shadow = 0
+mesh = SubResource("TextMesh_3nyrk")
+
+[node name="Label_DEADSHOT" type="MeshInstance3D" parent="Signs" unique_id=1095444138]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.4, 2.75, 7)
+cast_shadow = 0
+mesh = SubResource("TextMesh_2t64r")
+
+[node name="Label_ELEMENTAL_POP" type="MeshInstance3D" parent="Signs" unique_id=1919455159]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.4, 2.75, 7)
+cast_shadow = 0
+mesh = SubResource("TextMesh_5yc6n")
+
+[node name="Label_TOMBSTONE_BUILD_SKIPS" type="MeshInstance3D" parent="Signs" unique_id=989639132]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4.2, 2.75, 7)
+cast_shadow = 0
+mesh = SubResource("TextMesh_67yl1")
+
+[node name="Label_MULE_KICK_BUILD_SKIPS" type="MeshInstance3D" parent="Signs" unique_id=27080413]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 7, 2.75, 7)
+cast_shadow = 0
+mesh = SubResource("TextMesh_0ajr5")
+
+[node name="Label_PHD_FLOPPER_BUILD_SKIPS" type="MeshInstance3D" parent="Signs" unique_id=1763063701]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 9.8, 2.75, 7)
+cast_shadow = 0
+mesh = SubResource("TextMesh_7wur5")
+
+[node name="Label_DEATH_PERCEPTION_BUILD" type="MeshInstance3D" parent="Signs" unique_id=710931747]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 12.6, 2.75, 7)
+cast_shadow = 0
+mesh = SubResource("TextMesh_05iat")
+
+[node name="Label_PERKS_THE_BUILD_PLACES" type="MeshInstance3D" parent="Signs" unique_id=187795372]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 3.55, 7.95)
+cast_shadow = 0
+mesh = SubResource("TextMesh_uesse")
+
+[node name="Label_WALL_BUYS" type="MeshInstance3D" parent="Signs" unique_id=473884082]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -15.98, 3.2, -1)
+cast_shadow = 0
+mesh = SubResource("TextMesh_71mxh")
+
+[node name="Label_WALL_BUYS_2" type="MeshInstance3D" parent="Signs" unique_id=602501509]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 15.98, 3.2, -1)
+cast_shadow = 0
+mesh = SubResource("TextMesh_mbl6g")
+
+[node name="Label_MYSTERY_BOX_STARTS_HERE" type="MeshInstance3D" parent="Signs" unique_id=646097598]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -9, 1.3, -3.4)
+cast_shadow = 0
+mesh = SubResource("TextMesh_phxww")
+
+[node name="Label_POWER_SWITCH_PERKS_ARM" type="MeshInstance3D" parent="Signs" unique_id=1496354638]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2, -7.95)
+cast_shadow = 0
+mesh = SubResource("TextMesh_ihrcf")
+
+[node name="Label_AMMO_CRATE" type="MeshInstance3D" parent="Signs" unique_id=540030441]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, 1.3, -6)
+cast_shadow = 0
+mesh = SubResource("TextMesh_ocjks")
+
+[node name="Label_MACHINES_DOOR_500" type="MeshInstance3D" parent="Signs" unique_id=1615616243]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 3.45, -7.95)
+cast_shadow = 0
+mesh = SubResource("TextMesh_u4w5o")
+
+[node name="Label_MATERIALS_DEBRIS_OPENS" type="MeshInstance3D" parent="Signs" unique_id=962193156]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 3.45, -7.95)
+cast_shadow = 0
+mesh = SubResource("TextMesh_qhhta")
+
+[node name="Label_ARSENAL_NO_POWER_NEEDED" type="MeshInstance3D" parent="Signs" unique_id=1035827096]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.4, 2.9, -11.5)
+cast_shadow = 0
+mesh = SubResource("TextMesh_x57th")
+
+[node name="Label_ARMOR_STATION_NEEDS_POW" type="MeshInstance3D" parent="Signs" unique_id=786819497]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.4, 2.9, -16)
+cast_shadow = 0
+mesh = SubResource("TextMesh_tf0dq")
+
+[node name="Label_DER_WUNDERFIZZ" type="MeshInstance3D" parent="Signs" unique_id=1562801197]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.4, 2.9, -20.8)
+cast_shadow = 0
+mesh = SubResource("TextMesh_sii6k")
+
+[node name="Label_CRAFTING_TABLE_ALL_ITEM" type="MeshInstance3D" parent="Signs" unique_id=306796047]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 13.9, 2.2, -11)
+cast_shadow = 0
+mesh = SubResource("TextMesh_lujgv")
+
+[node name="Label_PACK_A_PUNCH" type="MeshInstance3D" parent="Signs" unique_id=622808892]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 13.9, 2.3, -20.5)
+cast_shadow = 0
+mesh = SubResource("TextMesh_r7gc8")
+
+[node name="Label_MYSTERY_BOX" type="MeshInstance3D" parent="Signs" unique_id=2126202547]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 11.5, 1.3, -23.6)
+cast_shadow = 0
+mesh = SubResource("TextMesh_cabey")
+
+[node name="Label_WOOD_BARRIER" type="MeshInstance3D" parent="Signs" unique_id=775344034]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 15.95, 2.6, -16)
+cast_shadow = 0
+mesh = SubResource("TextMesh_bj2tc")
+
+[node name="Label_YARD_AND_EXFIL_DOOR_10" type="MeshInstance3D" parent="Signs" unique_id=1843271221]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 3.45, -23.95)
+cast_shadow = 0
+mesh = SubResource("TextMesh_bio2v")
+
+[node name="Label_CONCRETE_BARRIER" type="MeshInstance3D" parent="Signs" unique_id=1675984377]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -15.95, 2.6, -9.6)
+cast_shadow = 0
+mesh = SubResource("TextMesh_h3hc5")
+
+[node name="Label_EXFIL_LANDS_HERE" type="MeshInstance3D" parent="Signs" unique_id=2071998544]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.02, -43.6)
+cast_shadow = 0
+mesh = SubResource("TextMesh_vaaur")
+
+[node name="Label_EXFIL_RADIO_LIVE_FROM_R" type="MeshInstance3D" parent="Signs" unique_id=1720024006]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4, 1, -27.6)
+cast_shadow = 0
+mesh = SubResource("TextMesh_lligr")
+
+[node name="Label_MYSTERY_BOX_2" type="MeshInstance3D" parent="Signs" unique_id=1837022378]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 1.3, -38.6)
+cast_shadow = 0
+mesh = SubResource("TextMesh_o0k3n")
+
+[node name="Label_ZM_DEBUG" type="MeshInstance3D" parent="Signs" unique_id=2089484902]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, -45)
+cast_shadow = 0
+mesh = SubResource("TextMesh_x32lk")
+
+[node name="Label_SOUND_ROOM_ZM_NACHT_BUN" type="MeshInstance3D" parent="Signs" unique_id=1034591876]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.6, -7.95)
+cast_shadow = 0
+mesh = SubResource("TextMesh_m6s5c")
+
+[node name="Label_SOUND_ROOM_ZM_NACHT_BUN_2" type="MeshInstance3D" parent="Signs" unique_id=587537473]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6, 3.6, -23.95)
+cast_shadow = 0
+mesh = SubResource("TextMesh_y6tl7")
+
+[node name="Label_SOUND_ROOM_ZM_NACHT_INT" type="MeshInstance3D" parent="Signs" unique_id=1050689758]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.1, 2.9, -23.95)
+cast_shadow = 0
+mesh = SubResource("TextMesh_soe5b")
+
+[node name="Label_SOUND_ROOM_ZM_NACHT_BUN_3" type="MeshInstance3D" parent="Signs" unique_id=1584478800]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 8, 3.35, -28.55)
+cast_shadow = 0
+mesh = SubResource("TextMesh_v4s75")
+
+[node name="Label_SOUND_ROOM_ZM_NACHT_BUN_4" type="MeshInstance3D" parent="Signs" unique_id=1407516513]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 2, -39.95)
+cast_shadow = 0
+mesh = SubResource("TextMesh_tmad6")
+
+[node name="Label_SOUND_ROOM_ZM_NACHT_BUN_5" type="MeshInstance3D" parent="Signs" unique_id=765162804]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 3.6, -39)
+cast_shadow = 0
+mesh = SubResource("TextMesh_wi1lk")
+
+[node name="Label_NO_SOUND_ROOM_HERE_THE" type="MeshInstance3D" parent="Signs" unique_id=1515424868]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6, -32)
+cast_shadow = 0
+mesh = SubResource("TextMesh_vj6xt")
+
+[node name="Label_ROUGHNESS_0_TO_1_NOT_ME" type="MeshInstance3D" parent="Signs" unique_id=2016474774]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.1, 0.45, -10.64)
+cast_shadow = 0
+mesh = SubResource("TextMesh_762lw")
+
+[node name="Label_METAL_ROUGHNESS_0_TO_1" type="MeshInstance3D" parent="Signs" unique_id=931777264]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.1, 0.45, -13.04)
+cast_shadow = 0
+mesh = SubResource("TextMesh_trwaf")
+
+[node name="Label_COLOURS_AND_SHAPES_MATT" type="MeshInstance3D" parent="Signs" unique_id=695267788]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.1, 0.45, -15.44)
+cast_shadow = 0
+mesh = SubResource("TextMesh_5aajj")
+
+[node name="Label_TEXTURE_MAPS" type="MeshInstance3D" parent="Signs" unique_id=57588876]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.1, 0.45, -17.84)
+cast_shadow = 0
+mesh = SubResource("TextMesh_4fkbj")
+
+[node name="Label_SEE_THROUGH_AND_GLOW_GL" type="MeshInstance3D" parent="Signs" unique_id=366300235]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.1, 0.45, -20.24)
+cast_shadow = 0
+mesh = SubResource("TextMesh_82vgy")
+
+[node name="Label_SPECIAL_CASES" type="MeshInstance3D" parent="Signs" unique_id=86775462]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.1, 0.45, -22.64)
+cast_shadow = 0
+mesh = SubResource("TextMesh_fvy83")
+
+[node name="Label_MATERIALS_EVERYTHING_HE" type="MeshInstance3D" parent="Signs" unique_id=1155912137]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.1, 3.4, -23.95)
+cast_shadow = 0
+mesh = SubResource("TextMesh_2k1wo")
+
+[node name="Label_ROUGH_0_0" type="MeshInstance3D" parent="Signs" unique_id=2023298397]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 2.05, -11)
+cast_shadow = 0
+mesh = SubResource("TextMesh_dhwla")
+
+[node name="Label_ROUGH_0_25" type="MeshInstance3D" parent="Signs" unique_id=1547878384]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6, 2.05, -11)
+cast_shadow = 0
+mesh = SubResource("TextMesh_6odpo")
+
+[node name="Label_ROUGH_0_5" type="MeshInstance3D" parent="Signs" unique_id=1400460720]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.2, 2.05, -11)
+cast_shadow = 0
+mesh = SubResource("TextMesh_ajs3q")
+
+[node name="Label_ROUGH_0_75" type="MeshInstance3D" parent="Signs" unique_id=116111511]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8, 2.05, -11)
+cast_shadow = 0
+mesh = SubResource("TextMesh_e5gn5")
+
+[node name="Label_ROUGH_1_0" type="MeshInstance3D" parent="Signs" unique_id=1254962134]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4, 2.05, -11)
+cast_shadow = 0
+mesh = SubResource("TextMesh_m38p1")
+
+[node name="Label_GLOSSY_RED" type="MeshInstance3D" parent="Signs" unique_id=1377026232]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2.05, -11)
+cast_shadow = 0
+mesh = SubResource("TextMesh_kt04d")
+
+[node name="Label_GOLD_0_0" type="MeshInstance3D" parent="Signs" unique_id=1297273800]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 2.05, -13.4)
+cast_shadow = 0
+mesh = SubResource("TextMesh_ouy07")
+
+[node name="Label_GOLD_0_25" type="MeshInstance3D" parent="Signs" unique_id=1400183481]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6, 2.05, -13.4)
+cast_shadow = 0
+mesh = SubResource("TextMesh_lvbb5")
+
+[node name="Label_GOLD_0_5" type="MeshInstance3D" parent="Signs" unique_id=1889627336]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.2, 2.05, -13.4)
+cast_shadow = 0
+mesh = SubResource("TextMesh_w4126")
+
+[node name="Label_GOLD_0_75" type="MeshInstance3D" parent="Signs" unique_id=1341383042]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8, 2.05, -13.4)
+cast_shadow = 0
+mesh = SubResource("TextMesh_l7txq")
+
+[node name="Label_GOLD_1_0" type="MeshInstance3D" parent="Signs" unique_id=292994075]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4, 2.05, -13.4)
+cast_shadow = 0
+mesh = SubResource("TextMesh_krhxd")
+
+[node name="Label_CHROME" type="MeshInstance3D" parent="Signs" unique_id=994785569]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2.05, -13.4)
+cast_shadow = 0
+mesh = SubResource("TextMesh_1r8ut")
+
+[node name="Label_RED_BOX" type="MeshInstance3D" parent="Signs" unique_id=1162726205]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 2.05, -15.8)
+cast_shadow = 0
+mesh = SubResource("TextMesh_dh3b1")
+
+[node name="Label_GREEN_CYLINDER" type="MeshInstance3D" parent="Signs" unique_id=518241653]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6, 2.05, -15.8)
+cast_shadow = 0
+mesh = SubResource("TextMesh_g26ug")
+
+[node name="Label_BLUE_CAPSULE" type="MeshInstance3D" parent="Signs" unique_id=1596597624]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.2, 2.05, -15.8)
+cast_shadow = 0
+mesh = SubResource("TextMesh_gu5fj")
+
+[node name="Label_YELLOW_PRISM" type="MeshInstance3D" parent="Signs" unique_id=1254840133]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8, 2.05, -15.8)
+cast_shadow = 0
+mesh = SubResource("TextMesh_7v3ex")
+
+[node name="Label_WHITE_TORUS" type="MeshInstance3D" parent="Signs" unique_id=862234333]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4, 2.05, -15.8)
+cast_shadow = 0
+mesh = SubResource("TextMesh_2cd3t")
+
+[node name="Label_BLACK_SPHERE" type="MeshInstance3D" parent="Signs" unique_id=712586301]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2.05, -15.8)
+cast_shadow = 0
+mesh = SubResource("TextMesh_lpfwm")
+
+[node name="Label_COLOUR_TEXTURE_RED_CORN" type="MeshInstance3D" parent="Signs" unique_id=586434984]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 2.05, -18.2)
+cast_shadow = 0
+mesh = SubResource("TextMesh_q0xa4")
+
+[node name="Label_TEXTURE_x_TINT" type="MeshInstance3D" parent="Signs" unique_id=2110731214]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6, 2.05, -18.2)
+cast_shadow = 0
+mesh = SubResource("TextMesh_n5xhn")
+
+[node name="Label_NORMAL_MAP" type="MeshInstance3D" parent="Signs" unique_id=267285932]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.2, 2.05, -18.2)
+cast_shadow = 0
+mesh = SubResource("TextMesh_e0slp")
+
+[node name="Label_ROUGHNESS_MAP" type="MeshInstance3D" parent="Signs" unique_id=137728328]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8, 2.05, -18.2)
+cast_shadow = 0
+mesh = SubResource("TextMesh_6ico0")
+
+[node name="Label_METAL_MAP_RIGHT_HALF_ME" type="MeshInstance3D" parent="Signs" unique_id=1751338234]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4, 2.05, -18.2)
+cast_shadow = 0
+mesh = SubResource("TextMesh_q6h3p")
+
+[node name="Label_ALL_MAPS" type="MeshInstance3D" parent="Signs" unique_id=98389372]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2.05, -18.2)
+cast_shadow = 0
+mesh = SubResource("TextMesh_epvq7")
+
+[node name="Label_CUT_OUT_SCISSOR" type="MeshInstance3D" parent="Signs" unique_id=1888536541]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 2.05, -20.6)
+cast_shadow = 0
+mesh = SubResource("TextMesh_8sn76")
+
+[node name="Label_CUT_OUT_HASH_TINTED" type="MeshInstance3D" parent="Signs" unique_id=109378200]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6, 2.05, -20.6)
+cast_shadow = 0
+mesh = SubResource("TextMesh_jpk14")
+
+[node name="Label_GLASS" type="MeshInstance3D" parent="Signs" unique_id=102019887]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.2, 2.05, -20.6)
+cast_shadow = 0
+mesh = SubResource("TextMesh_emlpo")
+
+[node name="Label_TINTED_GLASS" type="MeshInstance3D" parent="Signs" unique_id=1677039371]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8, 2.05, -20.6)
+cast_shadow = 0
+mesh = SubResource("TextMesh_ex106")
+
+[node name="Label_GLOW_COLOUR" type="MeshInstance3D" parent="Signs" unique_id=73569131]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4, 2.05, -20.6)
+cast_shadow = 0
+mesh = SubResource("TextMesh_viprc")
+
+[node name="Label_GLOW_TEXTURE" type="MeshInstance3D" parent="Signs" unique_id=1689068243]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2.05, -20.6)
+cast_shadow = 0
+mesh = SubResource("TextMesh_xwoh2")
+
+[node name="Label_NAMED_mc_mtl_p7_concrete" type="MeshInstance3D" parent="Signs" unique_id=1732528807]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 2.05, -23)
+cast_shadow = 0
+mesh = SubResource("TextMesh_t3eoo")
+
+[node name="Label_MKMESH_game_material_ME" type="MeshInstance3D" parent="Signs" unique_id=1755513498]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6, 2.05, -23)
+cast_shadow = 0
+mesh = SubResource("TextMesh_doqp7")
+
+[node name="Label_SHADER_MATERIAL_THE_DEF" type="MeshInstance3D" parent="Signs" unique_id=1423909441]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.2, 2.05, -23)
+cast_shadow = 0
+mesh = SubResource("TextMesh_0moq6")
+
+[node name="Label_TEXT_AS_AN_OBJECT" type="MeshInstance3D" parent="Signs" unique_id=496223463]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8, 2.05, -23)
+cast_shadow = 0
+mesh = SubResource("TextMesh_lpjdw")
+
+[node name="Label_MIRRORED_SCALE_X_1_RE" type="MeshInstance3D" parent="Signs" unique_id=1282974352]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4, 2.05, -23)
+cast_shadow = 0
+mesh = SubResource("TextMesh_l61jt")
+
+[node name="Label_SQUASHED_1_4_0_6_1" type="MeshInstance3D" parent="Signs" unique_id=1956981124]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2.05, -23)
+cast_shadow = 0
+mesh = SubResource("TextMesh_qo0ke")
+
+[node name="Label_FACES_WALK_THROUGH_THE" type="MeshInstance3D" parent="Signs" unique_id=2143870690]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 3.5, -63.75)
+cast_shadow = 0
+mesh = SubResource("TextMesh_37ivb")
+
+[node name="Label_HULL_THE_HOLE_IS_FILLED" type="MeshInstance3D" parent="Signs" unique_id=1937557018]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 3.5, -63.75)
+cast_shadow = 0
+mesh = SubResource("TextMesh_8k8q8")
+
+[node name="Label_NONE_NO_COLLISION_AT_AL" type="MeshInstance3D" parent="Signs" unique_id=31471157]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 3.5, -63.75)
+cast_shadow = 0
+mesh = SubResource("TextMesh_80fx0")
+
+[node name="Label_MKMESH_COLLISION" type="MeshInstance3D" parent="Signs" unique_id=1890444009]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 4.3, -63.75)
+cast_shadow = 0
+mesh = SubResource("TextMesh_deqs0")
+
+[node name="Label_LOCKER" type="MeshInstance3D" parent="Signs" unique_id=631614825]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -34.6, 2.4, -30)
+cast_shadow = 0
+mesh = SubResource("TextMesh_7h01y")
+
+[node name="Label_TABLE_HULL_FILLS_UNDER" type="MeshInstance3D" parent="Signs" unique_id=881080020]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -34.6, 2.4, -33.2)
+cast_shadow = 0
+mesh = SubResource("TextMesh_m2hca")
+
+[node name="Label_WOOD_CRATE" type="MeshInstance3D" parent="Signs" unique_id=2107891800]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -34.6, 2.4, -36.4)
+cast_shadow = 0
+mesh = SubResource("TextMesh_akqrx")
+
+[node name="Label_PALLET_NOT_SOLID" type="MeshInstance3D" parent="Signs" unique_id=1031010428]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -34.6, 2.4, -39.6)
+cast_shadow = 0
+mesh = SubResource("TextMesh_43bca")
+
+[node name="Label_SANDBAGS" type="MeshInstance3D" parent="Signs" unique_id=1342722113]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -34.6, 2.4, -42.8)
+cast_shadow = 0
+mesh = SubResource("TextMesh_3p0vy")
+
+[node name="Label_FLOODLIGHT" type="MeshInstance3D" parent="Signs" unique_id=989290231]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -34.6, 2.4, -46)
+cast_shadow = 0
+mesh = SubResource("TextMesh_mtbtw")
+
+[node name="Label_SHOPPING_CART" type="MeshInstance3D" parent="Signs" unique_id=1564025962]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -34.6, 2.4, -49.2)
+cast_shadow = 0
+mesh = SubResource("TextMesh_wxi33")
+
+[node name="Label_METAL_SHELF" type="MeshInstance3D" parent="Signs" unique_id=1543901748]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -34.6, 2.4, -52.4)
+cast_shadow = 0
+mesh = SubResource("TextMesh_mmum7")
+
+[node name="Label_PLASTIC_CRATE" type="MeshInstance3D" parent="Signs" unique_id=869298395]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -34.6, 2.4, -55.6)
+cast_shadow = 0
+mesh = SubResource("TextMesh_sjqvl")
+
+[node name="Label_TOOLBOX" type="MeshInstance3D" parent="Signs" unique_id=1199671030]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -34.6, 2.4, -58.8)
+cast_shadow = 0
+mesh = SubResource("TextMesh_4qype")
+
+[node name="Label_WOOD_CRATE_x2_SCALE_2" type="MeshInstance3D" parent="Signs" unique_id=1426504847]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -34.6, 2.4, -62)
+cast_shadow = 0
+mesh = SubResource("TextMesh_xn1my")
+
+[node name="Label_TILTED_CRATE" type="MeshInstance3D" parent="Signs" unique_id=56922477]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -34.6, 2.4, -65.2)
+cast_shadow = 0
+mesh = SubResource("TextMesh_85sgq")
+
+[node name="Label_PROPS_GAME_MODELS" type="MeshInstance3D" parent="Signs" unique_id=300075056]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 3.2, -28.2)
+cast_shadow = 0
+mesh = SubResource("TextMesh_0spxa")
+
+[node name="Lights" type="Node3D" parent="." unique_id=1570515209]
+
+[node name="StartLight" type="OmniLight3D" parent="Lights" unique_id=1757011612]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, 0)
+light_energy = 1.5
+shadow_enabled = true
+omni_range = 18.0
+script = ExtResource("30_5brfv")
+
+[node name="MachinesLight" type="OmniLight3D" parent="Lights" unique_id=289787992]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 3.5, -16)
+light_energy = 1.5
+shadow_enabled = true
+omni_range = 12.0
+script = ExtResource("30_5brfv")
+
+[node name="GalleryLight" type="OmniLight3D" parent="Lights" unique_id=123587307]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 3.5, -16)
+light_energy = 1.5
+shadow_enabled = true
+omni_range = 12.0
+script = ExtResource("30_5brfv")
+
+[node name="GalleryRedLight" type="OmniLight3D" parent="Lights" unique_id=1777453580]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 2.5, -23)
+light_color = Color(1, 0.2, 0.15, 1)
+light_energy = 2.0
+shadow_enabled = true
+script = ExtResource("30_5brfv")
+
+[node name="PorchLight" type="OmniLight3D" parent="Lights" unique_id=1783116605]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 3.2, -26.5)
+light_color = Color(1, 0.85, 0.6, 1)
+shadow_enabled = true
+script = ExtResource("30_5brfv")
+
+[node name="ShedLight" type="OmniLight3D" parent="Lights" unique_id=73600462]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 2.6, -38)
+light_color = Color(1, 0.8, 0.55, 1)
+shadow_enabled = true
+omni_range = 4.0
+script = ExtResource("30_5brfv")
+
+[node name="PavilionLight" type="OmniLight3D" parent="Lights" unique_id=1554586887]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 3.9, -39)
+shadow_enabled = true
+omni_range = 8.0
+script = ExtResource("30_5brfv")
+
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=794646557]
+transform = Transform3D(0.81915206, 0.43938506, -0.36868784, 0, 0.64278764, 0.76604444, 0.57357645, -0.62750685, 0.5265408, 0, 20, 0)
+light_color = Color(1, 0.94, 0.84, 1)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=944993046]
+environment = SubResource("Environment_v7lu1")
