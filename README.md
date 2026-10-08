@@ -1,12 +1,18 @@
 # cw-mod — Call of Duty: Black Ops Cold War (T9) Community Revival
 
 > **Vision:** keep T9 Zombies alive. A community-owned, open-source mod that lets people
-> load custom Zombies content, play together (LAN/co-op first, hosted lobbies later), and
+> load custom Zombies content, play together , and
 > preserve this version of Zombies for the long run.
 
 **Community-owned.** Nobody owns this but the people who play it. Contributions welcome.
 
 ---
+
+> **AI disclaimer:** yes this is Ai slop.
+
+## Docs
+
+Full documentation: **[hiuoy.github.io/cw-docs](https://hiuoy.github.io/cw-docs/#/)**
 
 ## What this is
 
